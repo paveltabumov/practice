@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Список типичных ошибок при выполнении учебной практики: Word, Excel, VBA и оформление отчёта. Симптом, причина и решение.">
+  <title>Типичные ошибки — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="../theory/index.html">Введение</a>
+        <a href="../theory/word.html">Word</a>
+        <a href="../theory/excel.html">Excel</a>
+        <a href="../theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="../practice/index.html">Введение</a>
+        <a href="../practice/word.html">Word</a>
+        <a href="../practice/excel.html">Excel</a>
+        <a href="../practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="index.html" class="is-active">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Типичные ошибки</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Типичные ошибки</h1>
+      <p class="lead">
+        Список самых частых проблем при выполнении заданий и оформлении отчёта.
+        Если что-то не работает — скорее всего, ответ здесь. Каждая ошибка
+        оформлена по схеме: <em>симптом → причина → как исправить</em>.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">🔎</div>
+        <div class="callout__body">
+          <div class="callout__title">Сначала посмотрите здесь</div>
+          <p>
+            Прежде чем писать преподавателю — пролистайте эту страницу
+            и раздел частых вопросов в <a href="../report/trebovaniya.html">требованиях к отчёту</a>.
+            Возможно, ваш случай уже разобран.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===================== Фильтр ===================== -->
+      <div class="filter-bar" data-errors-filter>
+        <button class="is-active" data-filter="all">Все</button>
+        <button data-filter="word">Word</button>
+        <button data-filter="excel">Excel</button>
+        <button data-filter="vba">VBA</button>
+        <button data-filter="report">Отчёт</button>
+        <button data-filter="common">Общие</button>
+      </div>
+
+      <p class="muted" data-errors-count></p>
+
+      <!-- ============================================================
+           Общие
+           ============================================================ -->
+      <article class="err err--info" data-tags="common">
+        <div class="err__head">
+          <div class="err__icon">💾</div>
+          <h2 class="err__title">
+            Файл сохранён не под тем именем
+            <span class="err__tag">общее</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Работа сделана, но преподаватель её «не видит» — файл не находится.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Имя не соответствует формату: нет суффикса <code>_В&lt;nn&gt;</code>, пробелы, кириллица в латинской части, разное написание фамилии.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Откройте страницу <a href="../how-to.html">«Как проходить»</a>,
+            скопируйте шаблон имени и переименуйте файл. Формат:
+            <code>Практика_Word_Ivanov_PI-21-1_В07.docx</code> —
+            фамилия и группа латиницей без пробелов, номер варианта с ведущим нулём.
+          </div>
+        </div>
+      </article>
+
+      <article class="err err--warning" data-tags="common">
+        <div class="err__head">
+          <div class="err__icon">🪪</div>
+          <h2 class="err__title">
+            Нет колонтитула с ФИО и группой
+            <span class="err__tag">общее</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Файл правильный, но работа не зачитывается — нет признаков авторства.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Колонтитул вообще не задан, или задан только на одной странице, или забыт номер варианта.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            В Word: <em>Вставка → Верхний колонтитул → Пустой</em>.
+            В Excel: <em>Вставка → Колонтитулы</em>.
+            Формат: <code>Иванов И.И., ПИ-21-1, вариант 07</code>.
+            Проверьте на каждой странице или в режиме предпросмотра печати.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="common">
+        <div class="err__head">
+          <div class="err__icon">🎯</div>
+          <h2 class="err__title">
+            Вариант не тот, что задан преподавателем
+            <span class="err__tag">общее</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>В задании одни данные, в файле — другие.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Номер варианта взят не тот, который выдал преподаватель.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Сверьтесь с преподавателем, какой номер закреплён за вами.
+            Используйте именно этот номер во всех файлах и отчёте.
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           Word
+           ============================================================ -->
+      <article class="err" data-tags="word">
+        <div class="err__head">
+          <div class="err__icon">🧩</div>
+          <h2 class="err__title">
+            Оглавление пустое или не обновляется
+            <span class="err__tag">Word</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Вставлено оглавление, но в нём пусто или номера не совпадают с реальными страницами.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Заголовки оформлены «жирным», а не стилями <em>Заголовок 1/2/3</em>; или оглавление не обновлялось после изменения текста.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Выделите каждый заголовок и примените стиль через <em>Главная → Стили</em>.
+            Затем правый клик по оглавлению → <em>Обновить поле → Обновить целиком</em>.
+            Горячая клавиша — <kbd>F9</kbd>.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="word">
+        <div class="err__head">
+          <div class="err__icon">📏</div>
+          <h2 class="err__title">
+            Отступы сделаны пробелами
+            <span class="err__tag">Word</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Абзацы «пляшут»: где-то отступ больше, где-то меньше. При изменении шрифта всё «съезжает».</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Красная строка набрана пробелами или табуляцией, а не параметром <em>Первая строка → Отступ</em>.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Выделите абзацы → правый клик → <em>Абзац</em> → <em>Первая строка: Отступ, 0,75 см</em>.
+            Уберите лишние пробелы в начале строк. Сделайте то же самое для всех абзацев через стиль.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="word">
+        <div class="err__head">
+          <div class="err__icon">🖼️</div>
+          <h2 class="err__title">
+            Рисунок сдвигает текст
+            <span class="err__tag">Word</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>После вставки картинки текст «прыгает», образуются большие пробелы.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Не задано обтекание: рисунок стоит «в тексте» и занимает отдельный абзац даже там, где этого не нужно.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Выделите рисунок → <em>Формат → Обтекание текстом</em>.
+            Варианты: <em>В тексте</em>, <em>Вокруг рамки</em>, <em>По контуру</em>.
+            Если рисунок должен быть в колонке — используйте <em>В тексте</em>.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="word">
+        <div class="err__head">
+          <div class="err__icon">🔢</div>
+          <h2 class="err__title">
+            Формула набрана «по буквам», без редактора
+            <span class="err__tag">Word</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Дроби, корни и индексы выглядят «плоско», индексы на одном уровне с основным текстом.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Формула набрана обычным текстом, а не через <em>Microsoft Equation</em> или <em>Вставка → Уравнение</em>.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Удалите «плоскую» формулу и вставьте заново:
+            <em>Вставка → Уравнение</em> (<kbd>Alt</kbd>+<kbd>=</kbd>).
+            Дроби, корни и матрицы — через шаблоны на вкладке <em>Уравнение</em>.
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           Excel
+           ============================================================ -->
+      <article class="err" data-tags="excel">
+        <div class="err__head">
+          <div class="err__icon">💱</div>
+          <h2 class="err__title">
+            Формула при копировании считает не то
+            <span class="err__tag">Excel</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>В первой ячейке формула даёт правильный результат, после протягивания — неправильный.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Ссылка на константу (курс, коэффициент) записана как относительная (<code>A1</code>), а должна быть абсолютной (<code>$A$1</code>).</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Выделите в формуле ссылку на константу и нажмите <kbd>F4</kbd> — появятся знаки <code>$</code>. Повторите для всех констант.
+            Проверьте: при протягивании расчёт должен совпадать с ручным.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="excel">
+        <div class="err__head">
+          <div class="err__icon">🔢</div>
+          <h2 class="err__title">
+            СУММ не считает — числа сохранены как текст
+            <span class="err__tag">Excel</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Функция <code>СУММ</code> возвращает 0 или меньше, чем ожидалось. В углу ячеек — маленькие зелёные треугольники.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Числа введены как текст: с пробелами, апострофом впереди, или скопированы из веб-страницы.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Выделите проблемные ячейки → жёлтый восклицательный знак → <em>Преобразовать в число</em>. Если не помогает — <em>Данные → Текст по столбцам → Готово</em>. Зелёные треугольники должны исчезнуть.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="excel">
+        <div class="err__head">
+          <div class="err__icon">🔀</div>
+          <h2 class="err__title">
+            Сортировка перемешала таблицу
+            <span class="err__tag">Excel</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Фамилии отсортированы, а баллы остались на своих местах — данные «перепутались».</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Выделен один столбец вместо всей таблицы; или внутри таблицы есть пустая строка.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Отмените действие (<kbd>Ctrl</kbd>+<kbd>Z</kbd>). Убедитесь, что внутри данных нет пустых строк. Выделите всю таблицу или поставьте курсор внутрь неё — Excel сам определит диапазон. Затем <em>Данные → Сортировка</em>, включив опцию <em>«Мои данные содержат заголовки»</em>.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="excel">
+        <div class="err__head">
+          <div class="err__icon">📉</div>
+          <h2 class="err__title">
+            Сводная таблица «не видит» новые данные
+            <span class="err__tag">Excel</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>В источнике добавились строки, а сводная показывает старое.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Диапазон источника не расширен, либо сводная не обновлена.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Правый клик по сводной → <em>Обновить</em>. Если новых строк всё равно нет — <em>Анализ → Изменить источник данных</em> и расширьте диапазон. Идеально — заранее оформить источник как «умную таблицу» (<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+          </div>
+        </div>
+      </article>
+
+      <article class="err err--warning" data-tags="excel">
+        <div class="err__head">
+          <div class="err__icon">💾</div>
+          <h2 class="err__title">
+            Макросы пропали после сохранения
+            <span class="err__tag">Excel</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Макрос записан, всё работало, после перезапуска — кнопки не работают, кода нет.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Файл сохранён как <code>.xlsx</code>, а не <code>.xlsm</code>. В <code>.xlsx</code> макросы не хранятся.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            <em>Файл → Сохранить как</em> → тип файла <em>«Книга Excel с поддержкой макросов (*.xlsm)»</em>.
+            Проверьте имя: должно заканчиваться на <code>.xlsm</code>. Для заданий X-03, X-04 и всех VBA — обязательно.
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           VBA
+           ============================================================ -->
+      <article class="err" data-tags="vba">
+        <div class="err__head">
+          <div class="err__icon">🚫</div>
+          <h2 class="err__title">
+            «Compile error: Variable not defined»
+            <span class="err__tag">VBA</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Код не запускается — редактор указывает на необъявленную переменную.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Включён <code>Option Explicit</code>, а переменная не объявлена; или в имени опечатка.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Добавьте <code>Dim имя As Тип</code> в начало процедуры. Проверьте, что имя совпадает везде — VBA чувствителен к раскладке, но не к регистру.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="vba">
+        <div class="err__head">
+          <div class="err__icon">📐</div>
+          <h2 class="err__title">
+            InputBox вернул строку, а код ждёт число
+            <span class="err__tag">VBA</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Ошибка типа <em>Type mismatch</em>, когда пользователь ввёл значение через <code>InputBox</code>.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div><code>InputBox</code> всегда возвращает <code>String</code>, а переменная объявлена как <code>Integer</code> или <code>Single</code>.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Преобразуйте явно: <code>x = CInt(InputBox("Введите"))</code> или <code>x = Val(InputBox("Введите"))</code>.
+            <code>Val</code> терпим к «мусору» — вернёт 0, а не упадёт. Проверяйте пустую строку и «Отмену».
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="vba">
+        <div class="err__head">
+          <div class="err__icon">♾️</div>
+          <h2 class="err__title">
+            Цикл не заканчивается
+            <span class="err__tag">VBA</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Excel «зависает» или показывает «Не отвечает».</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>В теле цикла меняется переменная цикла, или шаг <code>Step</code> направлен «не туда» — счётчик никогда не достигает границы.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Прервите макрос: <kbd>Ctrl</kbd>+<kbd>Break</kbd> или <kbd>Esc</kbd>.
+            Проверьте: переменная цикла <code>i</code> не должна меняться в теле. Если счёт идёт «вниз», шаг должен быть отрицательным: <code>For i = 10 To 1 Step -1</code>.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="vba">
+        <div class="err__head">
+          <div class="err__icon">🧮</div>
+          <h2 class="err__title">
+            Функция в Excel возвращает 0
+            <span class="err__tag">VBA</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Ячейка с формулой <code>=МояФункция(A1)</code> показывает 0, хотя расчёт правильный.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Внутри <code>Function</code> ни разу не присвоено значение её имени.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            В теле функции должно быть: <code>Имя_функции = итоговое_значение</code>. Без этого VBA возвращает 0 по умолчанию.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="vba">
+        <div class="err__head">
+          <div class="err__icon">🌐</div>
+          <h2 class="err__title">
+            DateDiff не считает разницу
+            <span class="err__tag">VBA</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Функция <code>DateDiff</code> выдаёт неверные числа или ошибку.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Интервал задан кириллицей: <code>"м"</code>, <code>"г"</code> вместо латинских <code>"m"</code>, <code>"yyyy"</code>.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Используйте латинские обозначения: <code>"d"</code> — дни, <code>"m"</code> — месяцы, <code>"yyyy"</code> — годы. Убедитесь, что даты переданы как <code>Date</code>, а не как строки.
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           Отчёт
+           ============================================================ -->
+      <article class="err" data-tags="report">
+        <div class="err__head">
+          <div class="err__icon">🧾</div>
+          <h2 class="err__title">
+            Номер страницы стоит на титульном листе
+            <span class="err__tag">Отчёт</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>На титульном листе видна «1» сверху.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Не включена опция «Особый колонтитул для первой страницы» или нет разрыва раздела между титульным листом и остальным текстом.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            <em>Макет → Параметры страницы → Особый колонтитул для первой страницы</em>.
+            Если нужно, чтобы нумерация начиналась с 3-й страницы — поставьте разрыв раздела после титульника и в свойствах номера укажите «начать с 3».
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="report">
+        <div class="err__head">
+          <div class="err__icon">📚</div>
+          <h2 class="err__title">
+            Список литературы оформлен не по образцу
+            <span class="err__tag">Отчёт</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Источники перечислены, но по-разному: где-то без года, где-то без города, кавычки разные.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>Нет единого шаблона записи источника; часть скопирована с сайтов с разным стилем.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Приведите все источники к единому виду по образцу из раздела <a href="../report/trebovaniya.html">«Требования к отчёту»</a>.
+            Для книг: автор, название, город, издательство, год. Для статей: автор, название, издание, год, номер, страницы.
+          </div>
+        </div>
+      </article>
+
+      <article class="err" data-tags="report">
+        <div class="err__head">
+          <div class="err__icon">📝</div>
+          <h2 class="err__title">
+            Нет формулировки про компетенции
+            <span class="err__tag">Отчёт</span>
+          </h2>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Симптом</div>
+          <div>Отчёт почти готов, но преподаватель возвращает его на доработку.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Причина</div>
+          <div>В заключении нет финальной формулировки про ОПК-2 и ОПК-3.</div>
+        </div>
+        <div class="err__row">
+          <div class="err__label">Как исправить</div>
+          <div>
+            Добавьте в конец заключения обязательную фразу о сформированных компетенциях, как указано в <a href="../report/trebovaniya.html">требованиях к структуре отчёта</a>.
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           FAQ
+           ============================================================ -->
+      <h2>Не нашли свою ошибку?</h2>
+
+      <div class="card" style="padding: 0 var(--sp-5)">
+        <details class="qa">
+          <summary>Что делать, если моей ошибки нет в списке?</summary>
+          <div class="qa__answer">
+            <p>
+              Сформулируйте три вещи: <em>что вы сделали</em>, <em>что ожидали</em>,
+              <em>что произошло</em>. С этой формулировкой можно писать преподавателю
+              или искать решение в документации. Скорее всего, проблема уже
+              разобрана в частых вопросах к отчёту или в теории по нужному разделу.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Куда писать, если не получается совсем?</summary>
+          <div class="qa__answer">
+            <p>
+              Преподавателю — с приложением файла и скриншота. Опишите, что
+              и в каком шаге пошло не так. Не присылайте одно «не работает» —
+              так сложно помочь.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Может ли ИИ «спасти» работу?</summary>
+          <div class="qa__answer">
+            <p>
+              ИИ полезен как справочник: подсказать команду, объяснить ошибку,
+              предложить формулу. Но если вы не понимаете, что делает код
+              или формула, — на защите это выяснится. Работа сдаётся
+              вместе с устной защитой.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Что делать, если файл «побился»?</summary>
+          <div class="qa__answer">
+            <p>
+              Откройте последнюю сохранённую версию. Если файл вообще не открывается —
+              проверьте, что он не открыт в другом окне или в другом приложении.
+              Крупные проблемы с файлами лучше сразу показать преподавателю,
+              не пытаясь «починить» наугад.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <!-- ===================== Навигация внизу ===================== -->
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="../report/trebovaniya.html">К требованиям отчёта →</a>
+        <a class="btn btn--ghost" href="../practice/index.html">К заданиям</a>
+        <a class="btn btn--ghost" href="../how-to.html">Как проходить</a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+<script src="errors.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Практические задания по Excel: формулы, сводные таблицы, макросы, диаграммы. Персонализированные данные по варианту.">
+  <title>Практика: Excel — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout layout--toc">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="../theory/index.html">Введение</a>
+        <a href="../theory/word.html">Word</a>
+        <a href="../theory/excel.html">Excel</a>
+        <a href="../theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="index.html">Введение</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html" class="is-active">Excel</a>
+        <a href="vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="index.html" class="breadcrumbs__item">Практика</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Excel</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Практика: Excel</h1>
+      <p class="lead">
+        Четыре задания по табличному процессору: формулы и автозаполнение,
+        сводные таблицы, макросы и диаграммы. Исходные данные зависят
+        от вашего варианта — введите номер варианта сверху, и блоки «Что дано»
+        заполнятся автоматически.
+      </p>
+
+      <div class="task-variant-bar">
+        <span class="task-variant-bar__label">Мой вариант (1–30):</span>
+        <input type="number" min="1" max="30" placeholder="Номер варианта" autocomplete="off" id="variant-input">
+        <span class="task-variant-bar__result"></span>
+      </div>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">ℹ️</div>
+        <div class="callout__body">
+          <div class="callout__title">Про имена листов и макросов</div>
+          <p>
+            В заданиях X-02, X-03 и X-04 имена листов и макросов содержат номер
+            варианта (например, <code>Многоборье_В07</code> или
+            <code>РасходыХудший_В07</code>). Это обязательное требование —
+            по нему проверяется, что работу выполнял именно ваш вариант.
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           X-01
+           ============================================================ -->
+      <section class="task" id="x-01">
+        <header class="task__head">
+          <span class="badge badge--accent">X-01</span>
+          <h2 class="task__title">Формулы и автозаполнение</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> научиться строить таблицу, использовать автозаполнение,
+          сортировку, автосумму и встроенные функции <code>МАКС</code>, <code>МИН</code>.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Название таблицы:</strong> <span data-variant-slot="X01.title">—</span></p>
+            <p><strong>Вид соревнований:</strong> <span data-variant-slot="X01.sport">—</span></p>
+            <p><strong>Количество видов спорта:</strong> <span data-variant-slot="X01.sportsCount">—</span></p>
+            <p><strong>Максимум баллов в одном виде:</strong> <span data-variant-slot="X01.maxPerSport">—</span></p>
+            <p><strong>Имя листа:</strong> <span data-variant-slot="X01.sheetName">—</span></p>
+            <p><strong>Спортсмены:</strong></p>
+            <div data-variant-slot="X01.athletes">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте таблицу с колонками: <em>Фамилия</em>, далее по одному столбцу
+              на каждый вид спорта, затем <em>Итог</em>.</li>
+            <li>Заполните фамилии из блока «Что дано». Баллы — любые в допустимом диапазоне.</li>
+            <li>Используйте автозаполнение для копирования формулы, а не ручной ввод.</li>
+            <li>Отсортируйте спортсменов по алфавиту.</li>
+            <li>С помощью кнопки <em>Автосумма</em> подведите итоги по каждому спортсмену.</li>
+            <li>Определите максимальный результат по столбцу <em>Итог</em> через
+              функцию <code>МАКС</code>, минимальный — через <code>МИН</code>.</li>
+            <li>Найдите разницу между максимумом и минимумом (тоже формулой).</li>
+            <li>Переименуйте лист так, как указано в блоке «Что дано».</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;.xlsx</code>.</li>
+            <li>Лист с именем из задания.</li>
+            <li>В колонтитуле — ФИО, группа, вариант.</li>
+            <li>2 скриншота: заполненная таблица, строка с итогами и формулами.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем относительная ссылка отличается от абсолютной?</li>
+            <li>Как работает автозаполнение? Зачем нужен маркер заполнения?</li>
+            <li>Что делает функция <code>МАКС</code>? Какие у неё аргументы?</li>
+            <li>Как отсортировать таблицу по столбцу, не задевая заголовки?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           X-02
+           ============================================================ -->
+      <section class="task" id="x-02">
+        <header class="task__head">
+          <span class="badge badge--accent">X-02</span>
+          <h2 class="task__title">Сводные таблицы: классный журнал</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> связать данные с нескольких листов, посчитать средние
+          значения за четверть и собрать итоговую ведомость.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Название журнала:</strong> <span data-variant-slot="X02.title">—</span></p>
+            <p><strong>Предметы (отдельный лист на каждый):</strong></p>
+            <div data-variant-slot="X02.subjects">—</div>
+            <p><strong>Ученики:</strong></p>
+            <div data-variant-slot="X02.students">—</div>
+            <p><strong>Даты занятий:</strong></p>
+            <div data-variant-slot="X02.dates">—</div>
+            <p><strong>Четверть:</strong> <span data-variant-slot="X02.quarter">—</span></p>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте лист на каждый предмет, имена листов = названия предметов.</li>
+            <li>На каждом листе — таблица: <em>№</em>, <em>Фамилия</em>, столбцы по датам,
+              столбец <em>1 четверть</em> со средним значением.</li>
+            <li>Заполните оценки и посчитайте среднее через <code>СРЗНАЧ</code>.</li>
+            <li>Заполните остальные предметы, скопировав формулу среднего с первого листа.</li>
+            <li>Создайте лист <em>Итоги за I четверть</em> с таблицей: <em>№</em>,
+              <em>Фамилия</em>, по столбцу на каждый предмет.</li>
+            <li>Скопируйте значения оценок по каждому предмету <strong>ссылками</strong>
+              на листы предметов — чтобы при изменении оценки в журнале
+              она менялась и в ведомости.</li>
+            <li>Назовите лист так, как указано в задании.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;.xlsx</code>.</li>
+            <li>Листы: по одному на каждый предмет + лист итогов.</li>
+            <li>2 скриншота: журнал по одному предмету, итоговая ведомость.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Как сослаться на ячейку с другого листа? Как записывается такая ссылка?</li>
+            <li>Чем отличается <code>СРЗНАЧ</code> от среднего, посчитанного вручную?</li>
+            <li>Как скопировать формулу на другой лист, чтобы ссылки остались корректными?</li>
+            <li>Что произойдёт с итоговой ведомостью, если изменить оценку в журнале?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           X-03
+           ============================================================ -->
+      <section class="task" id="x-03">
+        <header class="task__head">
+          <span class="badge badge--accent">X-03</span>
+          <h2 class="task__title">Макросы: расходы и инфляция</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> научиться записывать макросы, редактировать их
+          в редакторе Visual Basic и привязывать к кнопкам.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Валюта:</strong> <span data-variant-slot="X03.baseCurrency">—</span></p>
+            <p><strong>Расходы за январь:</strong></p>
+            <div data-variant-slot="X03.expenses">—</div>
+            <p><strong>Варианты инфляции:</strong> худший — <span data-variant-slot="X03.inflation.worst">—</span>,
+              ожидаемый — <span data-variant-slot="X03.inflation.expected">—</span>,
+              лучший — <span data-variant-slot="X03.inflation.best">—</span>.</p>
+            <p><strong>Имена макросов:</strong></p>
+            <div data-variant-slot="X03.macroNames">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Постройте таблицу расходов за январь на основе данных варианта.</li>
+            <li>Рядом — колонка «Ожидаемые расходы (февраль)».</li>
+            <li>Запишите макрос <code>РасходыХудший_В&lt;вариант&gt;</code>:
+              <ul>
+                <li>в ячейку D3 — формула <code>=C3*(1+$G$5)</code>;</li>
+                <li>автозаполнение на D4:D7;</li>
+                <li>в D8 — <code>=СУММ(D3:D7)</code>;</li>
+                <li>денежный формат для D3:D8.</li>
+              </ul>
+            </li>
+            <li>Скопируйте макрос в редакторе Visual Basic, назовите его
+              <code>РасходыОжидаемый_В&lt;вариант&gt;</code>, замените ссылку
+              на строку с ожидаемой инфляцией.</li>
+            <li>Ещё раз скопируйте — <code>РасходыЛучший_В&lt;вариант&gt;</code>,
+              ссылка на строку лучшего варианта.</li>
+            <li>Создайте на листе три кнопки: <em>Худший</em>, <em>Ожидаемый</em>,
+              <em>Лучший</em>. Назначьте им соответствующие макросы.</li>
+            <li>Проверьте работу всех трёх кнопок.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>
+              — <strong>именно с макросами</strong>.</li>
+            <li>Три кнопки, работающие по нажатию.</li>
+            <li>Скриншот: таблица до и после нажатия одной из кнопок.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем <code>.xlsm</code> отличается от <code>.xlsx</code>?</li>
+            <li>Как открыть редактор Visual Basic? Где хранятся макросы?</li>
+            <li>Что означает запись <code>RC[-1]*(1+R5C7)</code> в R1C1-стиле?</li>
+            <li>Как назначить макрос кнопке на листе?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           X-04
+           ============================================================ -->
+      <section class="task" id="x-04">
+        <header class="task__head">
+          <span class="badge badge--accent">X-04</span>
+          <h2 class="task__title">Диаграммы и «что если»: выручка при разных курсах</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> построить диаграмму, использовать формулы массива
+          и привязать варианты расчётов к макросам.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Товары и цены в у.е.:</strong></p>
+            <div data-variant-slot="X04.goods">—</div>
+            <p><strong>Курс доллара:</strong> лучший — <span data-variant-slot="X04.rates.usd.best">—</span>,
+              ожидаемый — <span data-variant-slot="X04.rates.usd.expected">—</span>,
+              худший — <span data-variant-slot="X04.rates.usd.worst">—</span>.</p>
+            <p><strong>Курс евро:</strong> лучший — <span data-variant-slot="X04.rates.eur.best">—</span>,
+              ожидаемый — <span data-variant-slot="X04.rates.eur.expected">—</span>,
+              худший — <span data-variant-slot="X04.rates.eur.worst">—</span>.</p>
+            <p><strong>Имена макросов:</strong></p>
+            <div data-variant-slot="X04.macroNames">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Постройте таблицу: товар, цена в у.е., цена в рублях по курсу доллара,
+              цена в рублях по курсу евро.</li>
+            <li>Запишите макрос <code>ОжидаемыеВыручкиОжидаемый_В&lt;вариант&gt;</code>:
+              <ul>
+                <li>формула массива для колонки «по курсу доллара»;</li>
+                <li>формула массива для колонки «по курсу евро»;</li>
+                <li>строки с итогами через <code>Автосумму</code>;</li>
+                <li>денежный формат для диапазона.</li>
+              </ul>
+            </li>
+            <li>Скопируйте макрос в редакторе VBA и получите
+              <code>ОжидаемыеВыручкиЛучший_В&lt;вариант&gt;</code> и
+              <code>ОжидаемыеВыручкиХудший_В&lt;вариант&gt;</code>, заменив
+              ссылки на нужные строки курсов.</li>
+            <li>Создайте три кнопки: <em>Лучший</em>, <em>Ожидаемый</em>, <em>Худший</em>,
+              назначьте им макросы.</li>
+            <li>Постройте диаграмму «Цена товара по двум курсам»:
+              тип — гистограмма, категории — названия товаров,
+              две серии — рублёвая цена по доллару и по евро.</li>
+            <li>Проверьте работу всех трёх кнопок: диаграмма должна обновляться
+              вместе с числами.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Диаграмма на листе, три кнопки, работающие корректно.</li>
+            <li>Скриншот: диаграмма и таблица для одного из вариантов курса.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем формула массива отличается от обычной?</li>
+            <li>Как ввести формулу массива в Excel?</li>
+            <li>Что происходит с диаграммой, когда меняются исходные данные?</li>
+            <li>Как выбрать тип диаграммы под задачу?</li>
+          </ol>
+        </div>
+      </section>
+
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="vba.html">Дальше: практика VBA →</a>
+        <a class="btn btn--ghost" href="../theory/excel.html">Теория Excel</a>
+        <a class="btn btn--ghost" href="word.html">← К заданиям Word</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== TOC справа ===================== -->
+  <aside class="toc toc--tasks">
+    <div class="toc__title">Задания</div>
+    <ul class="toc__list">
+      <li><a href="#x-01">X-01. Формулы и автозаполнение</a></li>
+      <li><a href="#x-02">X-02. Сводные таблицы</a></li>
+      <li><a href="#x-03">X-03. Макросы: расходы</a></li>
+      <li><a href="#x-04">X-04. Диаграммы и «что если»</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+<script src="excel-data.js"></script>
+<script>
+  // Подстановка данных варианта
+  (function() {
+    const input = document.getElementById('variant-input');
+    const result = document.querySelector('.task-variant-bar__result');
+    
+    function formatPercent(val) {
+      return (val * 100).toFixed(1) + '%';
+    }
+    
+    function renderList(items) {
+      return '<ul>' + items.map(item => `<li>${item}</li>`).join('') + '</ul>';
+    }
+    
+    function renderTable(headers, rows) {
+      let html = '<table class="data"><thead><tr>';
+      headers.forEach(h => html += `<th>${h}</th>`);
+      html += '</tr></thead><tbody>';
+      rows.forEach(row => {
+        html += '<tr>';
+        row.forEach(cell => html += `<td>${cell}</td>`);
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+      return html;
+    }
+    
+    function updateVariant() {
+      const n = parseInt(input.value);
+      if (!n || n < 1 || n > 30) {
+        result.textContent = '';
+        document.querySelectorAll('[data-variant-slot]').forEach(el => {
+          el.textContent = '—';
+        });
+        return;
+      }
+      
+      result.textContent = `Вариант ${n}`;
+      
+      // X01
+      const x01 = window.PRACTICE_EXCEL.X01.variants[n - 1];
+      document.querySelector('[data-variant-slot="X01.title"]').textContent = x01.title;
+      document.querySelector('[data-variant-slot="X01.sport"]').textContent = x01.sport;
+      document.querySelector('[data-variant-slot="X01.sportsCount"]').textContent = x01.sportsCount;
+      document.querySelector('[data-variant-slot="X01.maxPerSport"]').textContent = x01.maxPerSport;
+      document.querySelector('[data-variant-slot="X01.sheetName"]').textContent = x01.sheetName;
+      document.querySelector('[data-variant-slot="X01.athletes"]').innerHTML = renderList(x01.athletes);
+      
+      // X02
+      const x02 = window.PRACTICE_EXCEL.X02.variants[n - 1];
+      document.querySelector('[data-variant-slot="X02.title"]').textContent = x02.title;
+      document.querySelector('[data-variant-slot="X02.subjects"]').innerHTML = renderList(x02.subjects);
+      document.querySelector('[data-variant-slot="X02.students"]').innerHTML = renderList(x02.students);
+      document.querySelector('[data-variant-slot="X02.dates"]').innerHTML = renderList(x02.dates);
+      document.querySelector('[data-variant-slot="X02.quarter"]').textContent = x02.quarter;
+      
+      // X03
+      const x03 = window.PRACTICE_EXCEL.X03.variants[n - 1];
+      document.querySelector('[data-variant-slot="X03.baseCurrency"]').textContent = x03.baseCurrency;
+      document.querySelector('[data-variant-slot="X03.expenses"]').innerHTML = renderTable(
+        ['Статья расходов', 'Сумма'],
+        x03.expenses
+      );
+      document.querySelector('[data-variant-slot="X03.inflation.worst"]').textContent = formatPercent(x03.inflation.worst);
+      document.querySelector('[data-variant-slot="X03.inflation.expected"]').textContent = formatPercent(x03.inflation.expected);
+      document.querySelector('[data-variant-slot="X03.inflation.best"]').textContent = formatPercent(x03.inflation.best);
+      document.querySelector('[data-variant-slot="X03.macroNames"]').innerHTML = 
+        `<ul>
+          <li>Худший: <code>${x03.macroNames.worst}</code></li>
+          <li>Ожидаемый: <code>${x03.macroNames.expected}</code></li>
+          <li>Лучший: <code>${x03.macroNames.best}</code></li>
+        </ul>`;
+      
+      // X04
+      const x04 = window.PRACTICE_EXCEL.X04.variants[n - 1];
+      document.querySelector('[data-variant-slot="X04.goods"]').innerHTML = renderTable(
+        ['Товар', 'Цена (у.е.)'],
+        x04.goods
+      );
+      document.querySelector('[data-variant-slot="X04.rates.usd.best"]').textContent = x04.rates.usd.best.toFixed(1);
+      document.querySelector('[data-variant-slot="X04.rates.usd.expected"]').textContent = x04.rates.usd.expected.toFixed(1);
+      document.querySelector('[data-variant-slot="X04.rates.usd.worst"]').textContent = x04.rates.usd.worst.toFixed(1);
+      document.querySelector('[data-variant-slot="X04.rates.eur.best"]').textContent = x04.rates.eur.best.toFixed(1);
+      document.querySelector('[data-variant-slot="X04.rates.eur.expected"]').textContent = x04.rates.eur.expected.toFixed(1);
+      document.querySelector('[data-variant-slot="X04.rates.eur.worst"]').textContent = x04.rates.eur.worst.toFixed(1);
+      document.querySelector('[data-variant-slot="X04.macroNames"]').innerHTML = 
+        `<ul>
+          <li>Худший: <code>${x04.macroNames.worst}</code></li>
+          <li>Ожидаемый: <code>${x04.macroNames.expected}</code></li>
+          <li>Лучший: <code>${x04.macroNames.best}</code></li>
+        </ul>`;
+    }
+    
+    input.addEventListener('input', updateVariant);
+    
+    // Восстановление из localStorage
+    const saved = localStorage.getItem('practice-variant');
+    if (saved) {
+      input.value = saved;
+      updateVariant();
+    }
+    
+    // Сохранение
+    input.addEventListener('change', () => {
+      localStorage.setItem('practice-variant', input.value);
+    });
+  })();
+</script>
+</body>
+</html>

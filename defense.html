@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Список вопросов к защите учебной практики по Word, Excel и VBA. Интерактивный тренажёр для самопроверки.">
+  <title>Вопросы к защите — Учебная практика</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="theory/index.html">Введение</a>
+        <a href="theory/word.html">Word</a>
+        <a href="theory/excel.html">Excel</a>
+        <a href="theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="practice/index.html">Введение</a>
+        <a href="practice/word.html">Word</a>
+        <a href="practice/excel.html">Excel</a>
+        <a href="practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="report/requirements.html">Отчёт</a>
+        <a href="defense.html" class="is-active">Вопросы к защите</a>
+        <a href="errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Вопросы к защите</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Вопросы к защите</h1>
+      <p class="lead">
+        Защита практики проходит в форме устного собеседования. 
+        Преподаватель случайным образом выбирает <strong>3 вопроса</strong> из списка ниже.
+        Вы должны дать чёткий ответ и, при необходимости, продемонстрировать действие в файле.
+      </p>
+
+      <!-- ===================== Тренажёр ===================== -->
+      <div class="card" style="background: var(--surface-2); border-left: 4px solid var(--accent);">
+        <h3 style="margin-top: 0">🎲 Тренажёр для самопроверки</h3>
+        <p class="muted" style="margin-bottom: var(--sp-3)">
+          Нажмите кнопку, чтобы получить 3 случайных вопроса. Попробуйте ответить на них вслух, не подглядывая в теорию!
+        </p>
+        <button class="btn btn--primary" id="randomize-btn">Сгенерировать 3 вопроса</button>
+        <div id="random-result" style="margin-top: var(--sp-4)"></div>
+      </div>
+
+      <!-- ===================== Word ===================== -->
+      <h2 id="word">Microsoft Word</h2>
+      <div class="card">
+        <ul class="defense-list">
+          <li class="defense-q">Чем стиль абзаца отличается от ручного форматирования и почему в отчёте требуется использовать именно стили?</li>
+          <li class="defense-q">Как правильно создать автоматическое оглавление и как обновить его после изменений в тексте?</li>
+          <li class="defense-q">Как сделать так, чтобы нумерация страниц начиналась с 3-й страницы, а на титульном листе номера не отображались?</li>
+          <li class="defense-q">Как правильно вставить и пронумеровать математическую формулу в тексте документа?</li>
+          <li class="defense-q">Что такое «обтекание текстом» у рисунка и как изменить его положение, не ломая вёрстку?</li>
+          <li class="defense-q">Как настроить разные колонтитулы для первой страницы или для разных разделов документа?</li>
+        </ul>
+      </div>
+
+      <!-- ===================== Excel ===================== -->
+      <h2 id="excel">Microsoft Excel</h2>
+      <div class="card">
+        <ul class="defense-list">
+          <li class="defense-q">В чём разница между относительной, абсолютной и смешанной ссылками? Приведите пример использования каждой.</li>
+          <li class="defense-q">Почему функция СУММ может возвращать 0, если визуально в ячейках стоят числа, и как это исправить?</li>
+          <li class="defense-q">Как работает сводная таблица и что нужно сделать, если в исходный диапазон добавились новые строки?</li>
+          <li class="defense-q">В чём принципиальная разница между форматами файлов .xlsx и .xlsm?</li>
+          <li class="defense-q">Как привязать записанный макрос к кнопке на листе и где хранится его код?</li>
+          <li class="defense-q">Как использовать функции ВПР (VLOOKUP) или ЕСЛИ (IF) для обработки табличных данных?</li>
+        </ul>
+      </div>
+
+      <!-- ===================== VBA ===================== -->
+      <h2 id="vba">Программирование на VBA</h2>
+      <div class="card">
+        <ul class="defense-list">
+          <li class="defense-q">Зачем нужна директива <code>Option Explicit</code> в начале модуля и какие ошибки она помогает предотвратить?</li>
+          <li class="defense-q">Функция <code>InputBox</code> всегда возвращает данные типа <code>String</code>. Как правильно преобразовать это значение в число?</li>
+          <li class="defense-q">В чём разница между <code>Sub</code> (процедурой) и <code>Function</code> (функцией)? Можно ли вызвать функцию пользователя из ячейки Excel?</li>
+          <li class="defense-q">Что произойдёт, если внутри цикла <code>For...Next</code> программно изменить значение счётчика?</li>
+          <li class="defense-q">Как вычислить разницу между двумя датами в месяцах или годах с помощью функции <code>DateDiff</code>?</li>
+          <li class="defense-q">Как обработать ошибку выполнения (runtime error) в коде VBA, чтобы макрос не завершался аварийно?</li>
+        </ul>
+      </div>
+
+      <!-- ===================== Общие и Отчёт ===================== -->
+      <h2 id="general">Общие вопросы и отчёт</h2>
+      <div class="card">
+        <ul class="defense-list">
+          <li class="defense-q">По какому правилу формируется имя файла отчёта и практических заданий?</li>
+          <li class="defense-q">Какие обязательные разделы должны быть в отчёте по практике и где размещаются листинги программ?</li>
+          <li class="defense-q">Как правильно оформить ссылку на источник в тексте отчёта и в списке литературы?</li>
+          <li class="defense-q">Какие компетенции (ОПК) осваиваются в ходе данной практики (ОПК-2, ОПК-3)?</li>
+          <li class="defense-q">Что делать, если при открытии файла с макросами появляется предупреждение системы безопасности Microsoft Office?</li>
+        </ul>
+      </div>
+
+      <!-- ===================== Навигация внизу ===================== -->
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="report/requirements.html">← К требованиям отчёта</a>
+        <a class="btn btn--ghost" href="practice/index.html">К практическим заданиям</a>
+        <a class="btn btn--ghost" href="how-to.html">Как проходить практику</a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="assets/site.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  // Логика тренажёра случайных вопросов
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('randomize-btn');
+    const result = document.getElementById('random-result');
+    const allQuestions = document.querySelectorAll('.defense-q');
+
+    if (btn && allQuestions.length > 0) {
+      btn.addEventListener('click', () => {
+        // Преобразуем NodeList в массив, перемешиваем и берём первые 3
+        const shuffled = Array.from(allQuestions).sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 3);
+
+        result.innerHTML = `
+          <div style="background: var(--surface-1); padding: var(--sp-4); border-radius: var(--radius); border: 1px solid var(--border);">
+            <h4 style="margin-top: 0; color: var(--accent);">Ваши вопросы на защите:</h4>
+            <ol style="margin: 0; padding-left: 1.2em; line-height: 1.6;">
+              ${selected.map(q => `<li style="margin-bottom: var(--sp-2)">${q.textContent.trim()}</li>`).join('')}
+            </ol>
+            <p class="muted" style="margin-top: var(--sp-3); margin-bottom: 0; font-size: 0.9em;">
+              💡 Совет: попробуйте ответить на них вслух, не подглядывая в теорию. Если затрудняетесь — прокрутите страницу к соответствующему разделу выше.
+            </p>
+          </div>
+        `;
+        
+        // Плавная прокрутка к результату
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  });
+</script>
+</body>
+</html>

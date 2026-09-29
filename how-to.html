@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Порядок прохождения учебной практики ЧГУ ИИТ: шаги, требования к файлам, скриншотам и отчёту.">
+  <title>Как проходить — Учебная практика</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="how-to.html" class="is-active">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="theory/index.html">Введение</a>
+        <a href="theory/word.html">Word</a>
+        <a href="theory/excel.html">Excel</a>
+        <a href="theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="practice/index.html">Введение</a>
+        <a href="practice/word.html">Word</a>
+        <a href="practice/excel.html">Excel</a>
+        <a href="practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="requirements.html">Отчёт</a>
+        <a href="defense.html">Вопросы к защите</a>
+        <a href="errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Как проходить</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Как проходить практику</h1>
+      <p class="lead">
+        Практика состоит из трёх частей — Word, Excel и VBA — плюс отчёт
+        и устная защита. Ниже — порядок действий, требования к файлам
+        и ответы на частые вопросы.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">ℹ️</div>
+        <div class="callout__body">
+          <div class="callout__title">Главное правило</div>
+          <p>
+            У каждого студента свой вариант. Все задания привязаны к нему:
+            тексты, числа, имена листов, названия макросов. Вариант
+            выдается преподавателем в начале практики.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===================== Общая схема ===================== -->
+      <h2>Общая схема</h2>
+      <p>
+        Семь шагов — от получения варианта до защиты. Проходить по порядку:
+        каждый следующий шаг опирается на предыдущий.
+      </p>
+
+      <ol class="steps">
+        <!-- Шаг 1 -->
+        <li>
+          <div class="steps__title">Получить свой вариант</div>
+          <div class="steps__body">
+            <p>
+              Узнать свой номер варианта у преподавателя или в списке группы.
+              Запомнить его — он используется в каждом задании.
+            </p>
+            <p><strong>Результат:</strong> известен номер варианта.</p>
+          </div>
+        </li>
+
+        <!-- Шаг 2 -->
+        <li>
+          <div class="steps__title">Разобраться с теорией</div>
+          <div class="steps__body">
+            <p>
+              Прочитать теорию по нужной части:
+              <a href="theory/word.html">Word</a>,
+              <a href="theory/excel.html">Excel</a>,
+              <a href="theory/vba.html">VBA</a>.
+              Теория оформлена карточками — не нужно читать всё подряд,
+              достаточно открыть нужную тему.
+            </p>
+            <p><strong>Результат:</strong> понимание, какими командами решается задача.</p>
+          </div>
+        </li>
+
+        <!-- Шаг 3 -->
+        <li>
+          <div class="steps__title">Выполнить задания по Word</div>
+          <div class="steps__body">
+            <p>
+              Открыть <a href="practice/word.html">задания Word</a>,
+              взять свой вариант и выполнить пункты по порядку.
+              Внутри каждого задания — что дано, что нужно сделать,
+              требования к файлу и вопросы к защите.
+            </p>
+            <p><strong>Результат:</strong> файл <code>Практика_Word_…docx</code>
+            с выполненными пунктами и скриншотами ключевых шагов.</p>
+          </div>
+        </li>
+
+        <!-- Шаг 4 -->
+        <li>
+          <div class="steps__title">Выполнить задания по Excel</div>
+          <div class="steps__body">
+            <p>
+              Аналогично Word — <a href="practice/excel.html">задания Excel</a>.
+              Здесь важно аккуратно работать с формулами и ссылками,
+              а не вбивать числа руками.
+            </p>
+            <p><strong>Результат:</strong> файл <code>Практика_Excel_…xlsx</code>
+            с таблицами, формулами, диаграммами и макросами.</p>
+          </div>
+        </li>
+
+        <!-- Шаг 5 -->
+        <li>
+          <div class="steps__title">Выполнить задания по VBA</div>
+          <div class="steps__body">
+            <p>
+              Самая объёмная часть — <a href="practice/vba.html">задания VBA</a>.
+              Каждая процедура и функция должна быть проверена на своих данных
+              и сохранена в одном файле.
+            </p>
+            <p><strong>Результат:</strong> файл <code>Практика_VBA_…xlsm</code>
+            со всеми модулями и таблицами для проверки функций.</p>
+          </div>
+        </li>
+
+        <!-- Шаг 6 -->
+        <li>
+          <div class="steps__title">Оформить отчёт</div>
+          <div class="steps__body">
+            <p>
+              Отчёт оформляется по <a href="report/trebovaniya.html">требованиям</a>:
+              титульный лист, аннотация, оглавление, введение, обзор ПО,
+              описание выполнения заданий, заключение, список литературы,
+              приложения.
+            </p>
+            <p><strong>Результат:</strong> файл <code>Отчёт_Практика_…docx</code>,
+            оформленный по шаблону.</p>
+          </div>
+        </li>
+
+        <!-- Шаг 7 -->
+        <li>
+          <div class="steps__title">Пройти защиту</div>
+          <div class="steps__body">
+            <p>
+              На защите задаются три случайных вопроса из
+              <a href="defense.html">списка</a>. Могут попросить показать
+              конкретный пункт в файле или изменить параметр при преподавателе.
+            </p>
+            <p><strong>Результат:</strong> зачёт по практике.</p>
+          </div>
+        </li>
+      </ol>
+
+      <!-- ===================== Именование файлов ===================== -->
+      <h2>Именование файлов</h2>
+      <p>
+        Формат имени строгий. Если имя не совпадает — работа не проверяется.
+        Вместо <code>Фамилия</code> — ваша фамилия латиницей без пробелов,
+        вместо <code>Группа</code> — номер группы, вместо <code>В07</code> —
+        номер варианта с ведущим нулём.
+      </p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Что сдаётся</th>
+              <th>Формат имени</th>
+              <th>Пример</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Word</td>
+              <td><code>Практика_Word_Фамилия_Группа_В07.docx</code></td>
+              <td><code>Практика_Word_Ivanov_PI-21-1_В07.docx</code></td>
+            </tr>
+            <tr>
+              <td>Excel</td>
+              <td><code>Практика_Excel_Фамилия_Группа_В07.xlsx</code></td>
+              <td><code>Практика_Excel_Ivanov_PI-21-1_В07.xlsx</code></td>
+            </tr>
+            <tr>
+              <td>VBA</td>
+              <td><code>Практика_VBA_Фамилия_Группа_В07.xlsm</code></td>
+              <td><code>Практика_VBA_Ivanov_PI-21-1_В07.xlsm</code></td>
+            </tr>
+            <tr>
+              <td>Отчёт</td>
+              <td><code>Отчёт_Практика_Фамилия_Группа_В07.docx</code></td>
+              <td><code>Отчёт_Практика_Ivanov_PI-21-1_В07.docx</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--warning">
+        <div class="callout__icon">⚠️</div>
+        <div class="callout__body">
+          <div class="callout__title">Расширение файла важно</div>
+          <p>
+            Для VBA — именно <code>.xlsm</code>, а не <code>.xlsx</code>.
+            Иначе макросы не сохранятся, и работа не будет зачтена.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===================== Колонтитул и свойства ===================== -->
+      <h2>Что должно быть внутри файлов</h2>
+      <p>
+        Чтобы работа не совпадала с чужой и с ответом из интернета,
+        каждый файл обязан содержать персональные данные.
+      </p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Где</th>
+              <th>Что указать</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Колонтитул (Word, Excel)</td>
+              <td>ФИО, группа, номер варианта — на каждой странице</td>
+            </tr>
+            <tr>
+              <td>Свойства документа</td>
+              <td>Автор = ФИО; Тема = «Практика Word / Excel / VBA»; Ключевые слова = вариант</td>
+            </tr>
+            <tr>
+              <td>Имена листов (Excel)</td>
+              <td>С номером варианта: например, <code>Расходы_В07</code></td>
+            </tr>
+            <tr>
+              <td>Имена макросов (VBA)</td>
+              <td>С номером варианта: например, <code>Расходы_В07</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ===================== Скриншоты ===================== -->
+      <h2>Скриншоты</h2>
+      <p>
+        По каждому заданию нужны скриншоты ключевых шагов. Это не украшение —
+        по ним видно, что работу делал человек, а не вставил готовый результат.
+      </p>
+
+      <div class="callout callout--success">
+        <div class="callout__icon">✅</div>
+        <div class="callout__body">
+          <div class="callout__title">Что должно быть на скриншоте</div>
+          <ul style="margin:0; padding-left: 1.2em">
+            <li>Видна строка меню или панель с выбранной командой.</li>
+            <li>Виден результат действия (текст, таблица, формула).</li>
+            <li>Видно название вашего файла в заголовке окна.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        Минимум — 2–3 скриншота на задание. Имя файла скриншота:
+        <code>В07_Word_01.png</code>, <code>В07_Word_02.png</code> и так далее.
+      </p>
+
+      <!-- ===================== Что проверяется ===================== -->
+      <h2>Что проверяется</h2>
+      <ul>
+        <li>Все пункты задания выполнены, а не пропущены.</li>
+        <li>Файлы названы по формату и содержат персональные данные.</li>
+        <li>Формулы, макросы, стили — рабочие, а не «нарисованные».</li>
+        <li>Скриншоты показывают процесс, а не только финал.</li>
+        <li>Студент может объяснить любую строку своего файла.</li>
+      </ul>
+
+      <!-- ===================== Частые вопросы ===================== -->
+      <h2>Частые вопросы</h2>
+
+      <div class="card" style="padding: 0 var(--sp-5)">
+        <details class="qa">
+          <summary>Можно ли пользоваться ИИ?</summary>
+          <div class="qa__answer">
+            <p>
+              Можно — как справочником. Нельзя сдавать работу, которую вы
+              не понимаете: на защите спросят, почему в формуле именно такая
+              ссылка, почему макрос называется так, а не иначе, что делает
+              конкретная строка. Если не можете объяснить — работа не зачитывается.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Можно ли поменять вариант?</summary>
+          <div class="qa__answer">
+            <p>
+              Нет. Вариант выдается преподавателем и одинаков
+              для всех заданий. Если считаете, что произошла ошибка,
+              обратитесь к преподавателю.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Сколько времени нужно?</summary>
+          <div class="qa__answer">
+            <p>
+              Ориентировочно 15–20 рабочих дней:
+              1–2 дня на теорию, 3–5 дней на Word, 3–5 дней на Excel,
+              5–7 дней на VBA, 2–3 дня на отчёт.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Что делать, если что-то не получается?</summary>
+          <div class="qa__answer">
+            <p>
+              Сначала посмотреть раздел <a href="errors/index.html">«Типичные ошибки»</a> —
+              там разобраны самые частые проблемы. Если решения нет —
+              обратиться к преподавателю, приложив файл и скриншот.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Можно ли сдать работу не в срок?</summary>
+          <div class="qa__answer">
+            <p>
+              Порядок и сроки сдачи определяет преподаватель. По умолчанию
+              все файлы сдаются в конце практики, до защиты.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>Что если я сделал в другом редакторе — LibreOffice, Google Docs?</summary>
+          <div class="qa__answer">
+            <p>
+              Задание рассчитано на Microsoft Word / Excel. Другие редакторы
+              могут не поддерживать часть функций (макросы, некоторые стили).
+              Если пользуетесь альтернативой — проверьте, что файл корректно
+              открывается в MS Office и содержит все нужные элементы.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div style="margin-top: var(--sp-6); display:flex; gap: var(--sp-3); flex-wrap:wrap">
+        <a class="btn btn--primary" href="practice/word.html">Начать с заданий Word →</a>
+        <a class="btn btn--ghost" href="defense.html">Вопросы к защите</a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="assets/site.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

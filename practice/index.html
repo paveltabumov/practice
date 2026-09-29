@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Практические задания по учебной практике: Word, Excel и VBA. Порядок выполнения, требования к файлам и отчёту.">
+  <title>Практика — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="../theory/index.html">Введение</a>
+        <a href="../theory/word.html">Word</a>
+        <a href="../theory/excel.html">Excel</a>
+        <a href="../theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="index.html" class="is-active">Введение</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Практика</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Практика</h1>
+      <p class="lead">
+        Практическая часть состоит из трёх блоков: Word, Excel и VBA.
+        Все задания привязаны к вашему варианту — узнайте его у преподавателя
+        и используйте во всех заданиях.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">ℹ️</div>
+        <div class="callout__body">
+          <div class="callout__title">Сначала — вариант</div>
+          <p>
+            Номер варианта выдается преподавателем в начале практики.
+            Он используется во всех заданиях: в именах файлов, листов, макросов.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===================== Три блока ===================== -->
+      <section class="theory-section">
+        <div class="theory-section__head">
+          <div class="theory-section__icon">📝</div>
+          <div>
+            <h2 class="theory-section__title">Word</h2>
+            <p class="theory-section__desc">
+              Оформление документов: стили, оглавление, таблицы, формулы, макросы.
+            </p>
+          </div>
+        </div>
+
+        <ul class="topics">
+          <li>
+            <a href="word.html#w-01">
+              <span class="topics__title">W-01. Комплексное форматирование</span>
+              <span class="topics__meta">Титульный лист, оглавление, колонтитулы</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#w-02">
+              <span class="topics__title">W-02. Тестовое задание WinWord</span>
+              <span class="topics__meta">Колонки, буквица, таблицы, WordArt</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="theory-section">
+        <div class="theory-section__head">
+          <div class="theory-section__icon">📊</div>
+          <div>
+            <h2 class="theory-section__title">Excel</h2>
+            <p class="theory-section__desc">
+              Таблицы, формулы, сводные, диаграммы, макросы.
+            </p>
+          </div>
+        </div>
+
+        <ul class="topics">
+          <li>
+            <a href="excel.html#x-01">
+              <span class="topics__title">X-01. Формулы и автозаполнение</span>
+              <span class="topics__meta">Сортировка, автосумма, МАКС/МИН</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#x-02">
+              <span class="topics__title">X-02. Сводные таблицы</span>
+              <span class="topics__meta">Классный журнал, ведомость итогов</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#x-03">
+              <span class="topics__title">X-03. Макросы: расходы</span>
+              <span class="topics__meta">Запись, VBA, кнопки на листе</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#x-04">
+              <span class="topics__title">X-04. Диаграммы и «что если»</span>
+              <span class="topics__meta">Формулы массива, три сценария курса</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="theory-section">
+        <div class="theory-section__head">
+          <div class="theory-section__icon">⌨️</div>
+          <div>
+            <h2 class="theory-section__title">VBA</h2>
+            <p class="theory-section__desc">
+              Программирование в Excel: переменные, условия, циклы, функции.
+            </p>
+          </div>
+        </div>
+
+        <ul class="topics">
+          <li>
+            <a href="vba.html#v-01">
+              <span class="topics__title">V-01. Переменные и типы</span>
+              <span class="topics__meta">Dim, диапазоны типов, Overflow</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#v-02">
+              <span class="topics__title">V-02. Условия: вознаграждение</span>
+              <span class="topics__meta">If…ElseIf, DateDiff, бонус за стаж</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#v-03">
+              <span class="topics__title">V-03. Условия: три задачи</span>
+              <span class="topics__meta">Электроэнергия, кирпич, абитуриенты</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#v-04">
+              <span class="topics__title">V-04. Циклы For…Next</span>
+              <span class="topics__meta">Сумма, комары, треугольник, вложенные</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#v-05">
+              <span class="topics__title">V-05. Процедуры и функции</span>
+              <span class="topics__meta">Окружности, прямоугольники</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#v-06">
+              <span class="topics__title">V-06. Стандартные функции</span>
+              <span class="topics__meta">Инициалы, замена, даты, преобразования</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== Что и как сдавать ===================== -->
+      <h2>Что сдаётся</h2>
+      <p>
+        Для каждого блока — свой файл. Имя файла строгое, формат должен
+        совпадать с указанным в задании.
+      </p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Блок</th>
+              <th>Файл</th>
+              <th>Расширение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Word</td>
+              <td><code>Практика_Word_Фамилия_Группа_В&lt;вариант&gt;</code></td>
+              <td><code>.docx</code></td>
+            </tr>
+            <tr>
+              <td>Excel</td>
+              <td><code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;</code></td>
+              <td><code>.xlsx</code></td>
+            </tr>
+            <tr>
+              <td>Excel с макросами (X-03, X-04)</td>
+              <td><code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;</code></td>
+              <td><code>.xlsm</code></td>
+            </tr>
+            <tr>
+              <td>VBA</td>
+              <td><code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;</code></td>
+              <td><code>.xlsm</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--warning">
+        <div class="callout__icon">⚠️</div>
+        <div class="callout__body">
+          <div class="callout__title">Расширение важно</div>
+          <p>
+            Для заданий X-03, X-04 и всего блока VBA — именно <code>.xlsm</code>.
+            Если сохранить как <code>.xlsx</code>, макросы и функции VBA потеряются,
+            и работа не будет зачтена.
+          </p>
+        </div>
+      </div>
+
+      <h2>Внутри каждого файла</h2>
+      <ul>
+        <li>Колонтитул: ФИО, группа, номер варианта — на каждой странице.</li>
+        <li>Свойства документа: автор = ФИО; тема = «Практика Word / Excel / VBA».</li>
+        <li>Имена листов и модулей — с номером варианта (например, <code>Расходы_В07</code>).</li>
+        <li>Скриншоты ключевых шагов — 2–3 на задание.</li>
+      </ul>
+
+      <!-- ===================== Порядок выполнения ===================== -->
+      <h2>Порядок выполнения</h2>
+      <ol class="steps">
+        <li>
+          <div class="steps__title">Узнать свой вариант</div>
+          <div class="steps__body">
+            <p>Номер варианта выдается преподавателем в начале практики.</p>
+          </div>
+        </li>
+        <li>
+          <div class="steps__title">Прочитать теорию по блоку</div>
+          <div class="steps__body">
+            <p>Короткие карточки в разделах <a href="../theory/word.html">Word</a>,
+              <a href="../theory/excel.html">Excel</a>,
+              <a href="../theory/vba.html">VBA</a>.</p>
+          </div>
+        </li>
+        <li>
+          <div class="steps__title">Выполнить задания блока</div>
+          <div class="steps__body">
+            <p>По порядку: <a href="word.html">Word</a> →
+              <a href="excel.html">Excel</a> →
+              <a href="vba.html">VBA</a>.
+              После каждого пункта — сохранять файл.</p>
+          </div>
+        </li>
+        <li>
+          <div class="steps__title">Сохранить с правильным именем</div>
+          <div class="steps__body">
+            <p>Имя — по формату из таблицы выше. Проверить колонтитул и свойства.</p>
+          </div>
+        </li>
+        <li>
+          <div class="steps__title">Сделать скриншоты</div>
+          <div class="steps__body">
+            <p>2–3 на задание: видна команда, действие и результат.</p>
+          </div>
+        </li>
+        <li>
+          <div class="steps__title">Оформить отчёт</div>
+          <div class="steps__body">
+            <p>По требованиям в разделе <a href="../report/trebovaniya.html">«Отчёт»</a>.</p>
+          </div>
+        </li>
+        <li>
+          <div class="steps__title">Защита</div>
+          <div class="steps__body">
+            <p>Три случайных вопроса из <a href="../defense.html">«Вопросов к защите»</a>.</p>
+          </div>
+        </li>
+      </ol>
+
+      <!-- ===================== Навигация внизу ===================== -->
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="word.html">Начать с Word →</a>
+        <a class="btn btn--ghost" href="../how-to.html">Как проходить</a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

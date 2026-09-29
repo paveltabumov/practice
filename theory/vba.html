@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Теоретический справочник по VBA в Excel: переменные, условия, циклы, процедуры, функции, стандартные функции.">
+  <title>Теория: VBA — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout layout--toc">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="index.html">Введение</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="vba.html" class="is-active">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="../practice/index.html">Введение</a>
+        <a href="../practice/word.html">Word</a>
+        <a href="../practice/excel.html">Excel</a>
+        <a href="../practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="index.html" class="breadcrumbs__item">Теория</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">VBA</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>VBA</h1>
+      <p class="lead">
+        Справочник по языку Visual Basic for Applications в Excel.
+        Темы идут в порядке практических заданий: переменные, условия, циклы,
+        процедуры и функции, стандартные функции.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">📖</div>
+        <div class="callout__body">
+          <div class="callout__title">Как читать код</div>
+          <p>
+            Все примеры в карточках — минимальные. Полные процедуры и задания
+            смотрите в разделе <a href="../practice/vba.html">«Практика VBA»</a>.
+            Там же разбирается работа с ячейками Excel (Range, Cells).
+            Примеры можно копировать в модуль и проверять.
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           1. Редактор VBA
+           ============================================================ -->
+      <section class="topic" id="editor">
+        <h2 class="topic__title">Редактор VBA</h2>
+        <p class="topic__lead">
+          Код пишется не в Excel, а в отдельном окне — редакторе Visual Basic.
+          Открывается из любой книги Excel.
+        </p>
+
+        <figure class="screenshot screenshot--placeholder" data-label="окно редактора VBA с окном проекта и модулем">
+          <img src="../assets/img/vba/vba-editor.png" alt="Редактор VBA">
+          <figcaption>Рис. 1. Редактор Visual Basic for Applications</figcaption>
+        </figure>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Ключевые панели</div>
+            <ul>
+              <li><strong>Project</strong> — дерево проекта: модули, листы, формы</li>
+              <li><strong>Properties</strong> — свойства выделенного объекта</li>
+              <li><strong>Code</strong> — окно с кодом</li>
+              <li><strong>Immediate</strong> — окно отладки, вывод через <code>Debug.Print</code></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Клавиши</div>
+            <ul>
+              <li><kbd>Alt</kbd>+<kbd>F11</kbd> — открыть / закрыть редактор</li>
+              <li><kbd>Ctrl</kbd>+<kbd>G</kbd> — окно Immediate</li>
+              <li><kbd>F5</kbd> — запустить процедуру</li>
+              <li><kbd>F8</kbd> — шаг с заходом в процедуры</li>
+              <li><kbd>F9</kbd> — поставить / снять точку останова</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Код написан в модуле листа, а не в обычном модуле.</li>
+              <li>Модуль не переименован — потом сложно найти нужный.</li>
+              <li><code>Option Explicit</code> отключён — опечатки в именах не отлавливаются.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Модуль создан через <em>Insert → Module</em></li>
+              <li>Модуль назван осмысленно</li>
+              <li>В начале модуля стоит <code>Option Explicit</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           2. Переменные и типы данных
+           ============================================================ -->
+      <section class="topic" id="variables">
+        <h2 class="topic__title">Переменные и типы данных</h2>
+        <p class="topic__lead">
+          Переменная — именованная ячейка памяти для значения.
+          Объявляется через <code>Dim</code>, тип задаётся ключевым словом.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Основные типы</div>
+            <ul>
+              <li><code>Byte</code> — 0…255</li>
+              <li><code>Integer</code> — −32 768…32 767</li>
+              <li><code>Long</code> — ±2,1 млрд</li>
+              <li><code>Single</code>, <code>Double</code> — дробные</li>
+              <li><code>Currency</code> — деньги</li>
+              <li><code>String</code> — текст</li>
+              <li><code>Boolean</code> — True / False</li>
+              <li><code>Date</code> — дата и время</li>
+              <li><code>Variant</code> — «любой», по умолчанию</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Объявление</div>
+            <ul>
+              <li><code>Dim A As Integer</code></li>
+              <li><code>Dim A%, B&amp;, C@</code> — сокращённо</li>
+              <li><code>Const Pi = 3.1415</code> — константа</li>
+              <li><code>Public A As Byte</code> — видна во всём проекте</li>
+              <li><code>Private A As Byte</code> — только внутри модуля</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Число не влезает в выбранный тип — ошибка <em>Overflow</em>.</li>
+              <li><code>Byte</code> вместо <code>Integer</code> для отрицательных значений.</li>
+              <li>Переменная без объявления, а <code>Option Explicit</code> включён.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Все переменные объявлены</li>
+              <li>Типы соответствуют диапазону значений</li>
+              <li>Константы вынесены в <code>Const</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           3. Константы
+           ============================================================ -->
+      <section class="topic" id="const">
+        <h2 class="topic__title">Константы</h2>
+        <p class="topic__lead">
+          Константа — значение, которое не меняется при выполнении программы.
+          Объявляется через <code>Const</code>.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Синтаксис</div>
+            <ul>
+              <li><code>Const Pi = 3.1415</code></li>
+              <li><code>Const S = 100, Price = 300</code></li>
+              <li><code>Const Rent = S * Price</code> — вычисляемая на этапе компиляции</li>
+              <li><code>Public Const Pi = 3.1415</code> — видна из всех модулей</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Попытка присвоить константе новое значение — ошибка компиляции.</li>
+              <li>Константа объявлена внутри процедуры — недоступна из других.</li>
+              <li>Ожидали, что <code>Const Rent = S * Price</code> пересчитается при изменении <code>S</code> — не пересчитается.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Константы в разделе объявлений модуля, если нужны в нескольких процедурах</li>
+              <li>Имена констант осмысленны</li>
+              <li>Значения не меняются по ходу программы</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. Операторы
+           ============================================================ -->
+      <section class="topic" id="operators">
+        <h2 class="topic__title">Операторы</h2>
+        <p class="topic__lead">
+          Арифметика, сравнение, логика. Приоритет — как в математике:
+          сначала скобки, степень, умножение/деление, потом сложение/вычитание.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Арифметика</div>
+            <ul>
+              <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> — как обычно</li>
+              <li><code>\</code> — целочисленное деление: <code>7 \ 2 = 3</code></li>
+              <li><code>Mod</code> — остаток: <code>7 Mod 2 = 1</code></li>
+              <li><code>^</code> — степень: <code>2 ^ 3 = 8</code></li>
+              <li><code>&amp;</code> — сцепка строк</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Сравнение и логика</div>
+            <ul>
+              <li><code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+              <li><code>And</code>, <code>Or</code>, <code>Not</code></li>
+              <li><code>Is</code> — сравнение объектов</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Путают <code>/</code> и <code>\</code>: <code>7 / 2 = 3.5</code>, а <code>7 \ 2 = 3</code>.</li>
+              <li>Забыли, что результат <code>Mod</code> для отрицательных чисел отрицательный.</li>
+              <li><code>And</code> применён к числам, а не к логическим значениям.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Порядок операций расставлен скобками, если есть сомнения</li>
+              <li>Целочисленное деление и остаток — там, где нужно</li>
+              <li>Логические операторы — только над Boolean</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           5. InputBox и MsgBox
+           ============================================================ -->
+      <section class="topic" id="io">
+        <h2 class="topic__title">InputBox и MsgBox</h2>
+        <p class="topic__lead">
+          <code>InputBox</code> запрашивает значение у пользователя,
+          <code>MsgBox</code> показывает сообщение. Это базовый ввод/вывод
+          в VBA.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 InputBox</div>
+            <ul>
+              <li><code>x = InputBox("Введите число")</code></li>
+              <li><code>InputBox("Введите", "Заголовок", "Значение по умолчанию")</code></li>
+              <li>Возвращает строку — при необходимости преобразовать</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 MsgBox</div>
+            <ul>
+              <li><code>MsgBox "Готово"</code></li>
+              <li><code>r = MsgBox("Вопрос?", vbYesNo + vbQuestion, "Заголовок")</code></li>
+              <li>Возвращает код нажатой кнопки: 6 — Да, 7 — Нет, 2 — Отмена</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li><code>InputBox</code> вернул строку, а код ждёт число — Runtime error.</li>
+              <li>Пользователь нажал «Отмена» — пустая строка ломает логику.</li>
+              <li>Сообщение на английском, а контекст — русский.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Ввод проверен на пустое значение и «Отмена»</li>
+              <li>Числа преобразованы через <code>Val</code> или <code>CInt</code></li>
+              <li>Окна сообщений с понятными заголовками</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           6. Условия
+           ============================================================ -->
+      <section class="topic" id="conditions">
+        <h2 class="topic__title">Условия</h2>
+        <p class="topic__lead">
+          Ветвление выполняется оператором <code>If…Then…Else</code>
+          и оператором выбора <code>Select Case</code>.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 If…Then…Else</div>
+            <ul>
+              <li><code>If x &gt; 0 Then MsgBox "плюс"</code></li>
+              <li><code>If x &gt; 0 Then … Else … End If</code></li>
+              <li><code>If … ElseIf … Else … End If</code> — цепочка</li>
+              <li><code>IIf(условие, да, нет)</code> — короткая форма</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Select Case</div>
+            <ul>
+              <li><code>Select Case x</code> → <code>Case 1</code>, <code>Case 2</code>, <code>Case Else</code></li>
+              <li><code>Case Is &gt; 0</code> — сравнение</li>
+              <li><code>Case 1 To 5</code> — диапазон</li>
+              <li><code>Case 1, 3, 5</code> — перечисление</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Забыли <code>End If</code> или <code>End Select</code>.</li>
+              <li>Условие записано как <code>If 1 &lt; x &lt; 5</code> — так нельзя, нужно <code>And</code>.</li>
+              <li>Перепутан порядок <code>ElseIf</code> — срабатывает не та ветвь.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Все ветви закрыты <code>End If</code> / <code>End Select</code></li>
+              <li>Составные условия — через <code>And</code> / <code>Or</code></li>
+              <li>Есть <code>Case Else</code> или <code>Else</code> на непредвиденный случай</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           7. Циклы
+           ============================================================ -->
+      <section class="topic" id="loops">
+        <h2 class="topic__title">Циклы</h2>
+        <p class="topic__lead">
+          Цикл повторяет блок кода. В базовом курсе используется
+          <code>For…Next</code>; он же применяется для вложенных циклов.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Синтаксис</div>
+            <ul>
+              <li><code>For i = 1 To 10 … Next i</code></li>
+              <li><code>For i = 10 To 1 Step -1 … Next i</code> — обратный счёт</li>
+              <li><code>For Each x In коллекция … Next x</code></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Вложенные циклы</div>
+            <ul>
+              <li>Внешний <code>i</code>, внутренний <code>j</code></li>
+              <li>Внутренний выполняется полностью за один шаг внешнего</li>
+              <li>Пример: треугольник из чисел, таблица умножения</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Забыли <code>Next i</code> — код не запускается.</li>
+              <li>Переменная цикла после <code>Next</code> остаётся на последнем значении + 1.</li>
+              <li>Изменение переменной цикла внутри тела — бесконечный цикл.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Все <code>For</code> закрыты <code>Next</code></li>
+              <li>Шаг задан, если он не равен 1</li>
+              <li>Вложенные циклы используют разные переменные</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           8. Процедуры и функции
+           ============================================================ -->
+      <section class="topic" id="procedures">
+        <h2 class="topic__title">Процедуры и функции</h2>
+        <p class="topic__lead">
+          <code>Sub</code> выполняет действия, ничего не возвращает.
+          <code>Function</code> возвращает значение и может использоваться
+          прямо в ячейках Excel.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Sub и Function</div>
+            <ul>
+              <li><code>Sub Имя() … End Sub</code> — процедура</li>
+              <li><code>Function Имя(Арг As Тип) As Тип … End Function</code></li>
+              <li>Возврат значения: <code>Имя = …</code> внутри функции</li>
+              <li>Аргументы — по значению (<code>ByVal</code>) или по ссылке (<code>ByRef</code>)</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Область видимости</div>
+            <ul>
+              <li><code>Public</code> — из любого модуля</li>
+              <li><code>Private</code> — только внутри модуля</li>
+              <li>По умолчанию — <code>Public</code></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Функция не возвращает значение — Excel показывает 0.</li>
+              <li><code>ByRef</code> вместо <code>ByVal</code> — изменился аргумент вызывающей стороны.</li>
+              <li>Процедура помечена <code>Private</code>, а вызывается из другого модуля.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Функция возвращает значение явно</li>
+              <li>Область видимости выбрана осознанно</li>
+              <li>Имена процедур — глаголы, функций — существительные</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           9. Математические функции
+           ============================================================ -->
+      <section class="topic" id="std-math">
+        <h2 class="topic__title">Стандартные функции: математика</h2>
+        <p class="topic__lead">
+          Готовые математические функции VBA — не нужно писать свои.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Функции</div>
+            <ul>
+              <li><code>Abs(x)</code> — модуль</li>
+              <li><code>Sgn(x)</code> — знак: −1, 0, 1</li>
+              <li><code>Fix(x)</code> — отбрасывает дробную часть</li>
+              <li><code>Int(x)</code> — округляет вниз</li>
+              <li><code>Rnd()</code> — случайное от 0 до 1</li>
+              <li><code>Round(x, n)</code> — округление до n знаков</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Путают <code>Fix</code> и <code>Int</code> для отрицательных чисел: <code>Fix(-3.7) = -3</code>, <code>Int(-3.7) = -4</code>.</li>
+              <li><code>Rnd</code> без <code>Randomize</code> даёт одинаковую последовательность.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Знак и округление проверены на отрицательных значениях</li>
+              <li><code>Randomize</code> вызван перед первым <code>Rnd</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           10. Строковые функции
+           ============================================================ -->
+      <section class="topic" id="std-string">
+        <h2 class="topic__title">Стандартные функции: строки</h2>
+        <p class="topic__lead">
+          Работа с текстом: выделение части, поиск, замена, изменение регистра.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Функции</div>
+            <ul>
+              <li><code>Len(s)</code> — длина</li>
+              <li><code>Left(s, n)</code> — первые n символов</li>
+              <li><code>Right(s, n)</code> — последние n символов</li>
+              <li><code>Mid(s, start, len)</code> — подстрока</li>
+              <li><code>InStr(s, подстрока)</code> — позиция первого вхождения</li>
+              <li><code>Replace(s, что, на что)</code> — замена</li>
+              <li><code>LCase(s)</code> / <code>UCase(s)</code> — регистр</li>
+              <li><code>StrReverse(s)</code> — разворот строки</li>
+              <li><code>Trim(s)</code> — убрать пробелы по краям</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Нумерация символов в строке — с 1, а не с 0.</li>
+              <li><code>Mid</code> с недостаточной длиной возвращает строку короче ожидаемой.</li>
+              <li><code>InStr</code> вернул 0 — подстрока не найдена; это не ошибка, а сигнал.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Проверка на пустую строку и <code>Nothing</code></li>
+              <li>Позиции и длины пересчитаны верно</li>
+              <li>Регистр приведён к нужному</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           11. Функции даты
+           ============================================================ -->
+      <section class="topic" id="std-date">
+        <h2 class="topic__title">Стандартные функции: даты</h2>
+        <p class="topic__lead">
+          Даты в VBA — отдельный тип <code>Date</code>. Есть готовые функции
+          для получения компонентов и вычисления разницы.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Функции</div>
+            <ul>
+              <li><code>Date</code> — текущая дата</li>
+              <li><code>Now</code> — дата и время</li>
+              <li><code>Day(d)</code>, <code>Month(d)</code>, <code>Year(d)</code></li>
+              <li><code>DateDiff("m", d1, d2)</code> — разница в месяцах</li>
+              <li><code>DateAdd("m", 2, d)</code> — прибавить 2 месяца</li>
+              <li><code>Weekday(d)</code> — день недели</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Дата введена как строка — операции с ней дадут ошибку.</li>
+              <li>Перепутаны порядок аргументов <code>DateDiff</code>.</li>
+              <li>Интервал задан кириллицей (<code>"м"</code>) вместо <code>"m"</code>.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Даты введены через <code>#дд.мм.гггг#</code></li>
+              <li>Интервалы <code>DateDiff</code> — латиницей</li>
+              <li>Проверены граничные случаи (конец месяца, года)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           12. Преобразование типов и форматов
+           ============================================================ -->
+      <section class="topic" id="std-convert">
+        <h2 class="topic__title">Преобразование типов и форматов</h2>
+        <p class="topic__lead">
+          Часто нужно превратить строку в число, число — в текст,
+          дату — в удобный формат.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Функции</div>
+            <ul>
+              <li><code>CStr(x)</code> — в строку</li>
+              <li><code>CInt(x)</code>, <code>CLng(x)</code> — в целое</li>
+              <li><code>CSng(x)</code>, <code>CDbl(x)</code> — в дробное</li>
+              <li><code>CDate(s)</code> — в дату</li>
+              <li><code>Val(s)</code> — из строки в число (терпимо к мусору)</li>
+              <li><code>Format(x, "Currency")</code> — денежный формат</li>
+              <li><code>Format(x, "#.#")</code> — один знак после запятой</li>
+              <li><code>Format(x, "#%")</code> — проценты</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li><code>CInt("12abc")</code> выдаст ошибку, а <code>Val("12abc")</code> вернёт 12.</li>
+              <li><code>Format</code> возвращает строку — не путать с числом.</li>
+              <li>При сцепке строк и чисел забывают <code>CStr</code>.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Преобразование явное, не «по умолчанию»</li>
+              <li>Ввод пользователя проверяется перед преобразованием</li>
+              <li>Форматы применяются к финальному выводу</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="../practice/vba.html">К заданиям VBA →</a>
+        <a class="btn btn--ghost" href="word.html">Теория Word</a>
+        <a class="btn btn--ghost" href="index.html">← К оглавлению теории</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== TOC справа ===================== -->
+  <aside class="toc">
+    <div class="toc__title">На этой странице</div>
+    <ul class="toc__list">
+      <li><a href="#editor">Редактор VBA</a></li>
+      <li><a href="#variables">Переменные и типы</a></li>
+      <li><a href="#const">Константы</a></li>
+      <li><a href="#operators">Операторы</a></li>
+      <li><a href="#io">InputBox и MsgBox</a></li>
+      <li><a href="#conditions">Условия</a></li>
+      <li><a href="#loops">Циклы</a></li>
+      <li><a href="#procedures">Процедуры и функции</a></li>
+      <li><a href="#std-math">Функции: математика</a></li>
+      <li><a href="#std-string">Функции: строки</a></li>
+      <li><a href="#std-date">Функции: даты</a></li>
+      <li><a href="#std-convert">Преобразование типов</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Практические задания по Word: комплексное форматирование, тестовое задание. Персонализированные данные по варианту.">
+  <title>Практика: Word — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout layout--toc">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="../theory/index.html">Введение</a>
+        <a href="../theory/word.html">Word</a>
+        <a href="../theory/excel.html">Excel</a>
+        <a href="../theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="index.html">Введение</a>
+        <a href="word.html" class="is-active">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="index.html" class="breadcrumbs__item">Практика</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Word</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Практика: Word</h1>
+      <p class="lead">
+        Два задания по текстовому процессору. У каждого студента — свой набор
+        исходных данных: название произведения, автор, текст, параметры
+        страницы. Введите номер варианта — данные подставятся в задания автоматически.
+      </p>
+
+      <!-- ============== Определение варианта ============== -->
+      <div class="task-variant-bar">
+        <span class="task-variant-bar__label">Мой вариант (1–30):</span>
+        <input type="number" min="1" max="30" placeholder="Номер варианта" autocomplete="off" id="variant-input">
+        <span class="task-variant-bar__result"></span>
+      </div>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">ℹ️</div>
+        <div class="callout__body">
+          <div class="callout__title">Как читать задания</div>
+          <p>
+            В каждом задании блок <strong>«Что дано»</strong> обновляется под ваш вариант.
+            Порядок действий, требования к файлу и вопросы к защите — одинаковые
+            для всех. Введите номер варианта в поле выше — данные подставятся автоматически.
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           W-01
+           ============================================================ -->
+      <section class="task" id="w-01">
+        <header class="task__head">
+          <span class="badge badge--accent">W-01</span>
+          <h2 class="task__title">Комплексное форматирование документа</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> освоить базовые приёмы оформления документа в Word —
+          параметры страницы, стили заголовков, титульный лист, списки, таблицы,
+          колонтитулы, автоматическое оглавление и нумерация.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Произведение:</strong> <span data-variant-slot="W01.title">—</span></p>
+            <p><strong>Подзаголовок:</strong> <span data-variant-slot="W01.subtitle">—</span></p>
+            <p><strong>Автор:</strong> <span data-variant-slot="W01.author">—</span></p>
+            <p><strong>Размер шрифта основного текста:</strong> <span data-variant-slot="W01.fontSize">—</span></p>
+            <p><strong>Гарнитура:</strong> <span data-variant-slot="W01.fontFamily">—</span></p>
+            <p><strong>Ориентация:</strong> <span data-variant-slot="W01.pageOrientation">—</span></p>
+            <p><strong>Поля:</strong> <span data-variant-slot="W01.margins">—</span></p>
+            <p><strong>Улицы для списка:</strong></p>
+            <div data-variant-slot="W01.streets">—</div>
+            <p style="margin-top: var(--sp-3)"><strong>Текст:</strong></p>
+            <div data-variant-slot="W01.text">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Настройте параметры отображения: режим — <em>Разметка страницы</em>, масштаб — 110%.</li>
+            <li>Задайте параметры страницы из блока «Что дано»: формат A4, ориентация, поля.</li>
+            <li>Наберите текст из блока «Что дано».</li>
+            <li>Вставьте заголовок и подзаголовок, отцентрируйте их.</li>
+            <li>Оформите заголовок стилем <em>Заголовок 1</em>, кегль 16, полужирный.</li>
+            <li>Разбейте текст на абзацы согласно образцу.</li>
+            <li>Сохраните документ под именем
+              <code>Практика_Word_Фамилия_Группа_В&lt;вариант&gt;.docx</code>.
+            </li>
+            <li>Перенесите заголовок и имя автора на первую страницу, оформите как титульный лист: рамка всей страницы, рисунок по теме произведения.</li>
+            <li>На третьей странице создайте нумерованный список улиц из блока «Что дано».</li>
+            <li>После списка вставьте таблицу «Цветочный город»: два раздела —
+              «Улица Колокольчиков» и «Улица Маргариток» — с номерами домов
+              и именами коротышек.</li>
+            <li>Озаглавьте страницы колонтитулами: вторая — <code>ТЕКСТ</code>, третья — <code>СПИСОК И ТАБЛИЦЫ</code>.</li>
+            <li>Пронумеруйте страницы внизу по центру.</li>
+            <li>На четвёртой странице вставьте заголовок <code>ФОРМУЛЫ</code> и формулы
+              через редактор Microsoft Equation:
+              <ul>
+                <li>матрица 3×3;</li>
+                <li>сумма <em>(a<sub>i</sub> + b<sub>i</sub>) / 15</em> по i от 1 до n;</li>
+                <li>интеграл от 3 до 5 от корня 4-й степени из r/t по dt.</li>
+              </ul>
+            </li>
+            <li>Пятую страницу назовите <code>АВТОР</code> и вставьте надпись с ФИО и группой.</li>
+            <li>На вторую страницу вставьте автоматически собранное оглавление (<em>Ссылки → Оглавление</em>).</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_Word_Фамилия_Группа_В&lt;вариант&gt;.docx</code>.</li>
+            <li>В колонтитуле каждой страницы — ФИО, группа, вариант.</li>
+            <li>В свойствах документа: автор = ФИО, тема = «Практика Word».</li>
+            <li>3 скриншота ключевых шагов: титульный лист, оглавление, страница с формулами.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем стиль отличается от ручного форматирования? Почему в задании требуется использовать стили?</li>
+            <li>Как обновить оглавление, если после его вставки текст изменился?</li>
+            <li>Как вставить формулу? Какие способы существуют?</li>
+            <li>Где задаётся нумерация страниц и почему она не должна быть на титульном листе?</li>
+            <li>Что такое обтекание текстом и зачем оно нужно?</li>
+            <li>Как разбить текст на колонки, не затрагивая остальной документ?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           W-02
+           ============================================================ -->
+      <section class="task" id="w-02">
+        <header class="task__head">
+          <span class="badge badge--accent">W-02</span>
+          <h2 class="task__title">Тестовое задание для WinWord</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> продемонстрировать владение расширенными средствами
+          Word — буквы, колонки, границы абзацев, таблицы с формулами, редактор
+          формул, объекты WordArt.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Заголовок:</strong> <span data-variant-slot="W02.title">—</span></p>
+            <p><strong>Подзаголовок:</strong> <span data-variant-slot="W02.subtitle">—</span></p>
+            <p><strong>Обращение:</strong> <span data-variant-slot="W02.salutation">—</span></p>
+            <p><strong>Подпись:</strong> <span data-variant-slot="W02.signature">—</span></p>
+            <p><strong>Название продукта:</strong> <span data-variant-slot="W02.productName">—</span></p>
+            <p><strong>Затраты времени:</strong></p>
+            <div data-variant-slot="W02.expenses">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте новый документ.</li>
+            <li>Настройте поля: сверху, снизу и справа — 1 см; слева — 2 см.</li>
+            <li>Создайте стиль <em>Нормальный</em>: Times New Roman, 12 pt, по обоим краям, интервал перед абзацем 6 pt.</li>
+            <li>Примените стиль ко всему документу.</li>
+            <li>Оформите заголовок жирным 20 pt, по центру. Подзаголовок — жирным, по центру.</li>
+            <li>Абзац «Адрес» — жирный курсив, по правому краю, дополните произвольным адресом.</li>
+            <li>Обращение — жирный курсив, по левому краю, дополните.</li>
+            <li>Вставьте буквицу в начало первого абзаца текста.</li>
+            <li>Второй абзац расположите в две колонки одинаковой ширины с разделительной линией.</li>
+            <li>Вставьте произвольный рисунок с обтеканием по образцу.</li>
+            <li>К пятому абзацу добавьте границы (<em>Формат → Границы и заливка</em>).</li>
+            <li>Абзац про «Приблизительные затраты… Итого» преобразуйте в таблицу.
+              Объедините ячейки первой строки, выделите заголовок жирным, измените
+              границы. В последнюю ячейку вставьте формулу <code>=SUM(ABOVE)</code>.
+            </li>
+            <li>Перед словами «С уважением» вставьте формулы через Microsoft Equation.
+              После этих слов — фамилию с инициалами и представьте эту строку
+              как объект WordArt.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_Word_Фамилия_Группа_В&lt;вариант&gt;.docx</code>.</li>
+            <li>В колонтитуле — ФИО, группа, вариант.</li>
+            <li>3 скриншота: колонки с рисунком, таблица с формулой, WordArt.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Что такое стиль абзаца и как его создать?</li>
+            <li>Как вставить буквицу и почему она появляется не в каждом абзаце?</li>
+            <li>Что делает формула <code>=SUM(ABOVE)</code> в таблице?</li>
+            <li>Зачем нужна разделительная линия в колонках?</li>
+            <li>Чем объект WordArt отличается от обычного текста?</li>
+          </ol>
+        </div>
+      </section>
+
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="excel.html">Дальше: практика Excel →</a>
+        <a class="btn btn--ghost" href="../theory/word.html">Теория Word</a>
+        <a class="btn btn--ghost" href="../how-to.html">Как проходить</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== TOC справа ===================== -->
+  <aside class="toc toc--tasks">
+    <div class="toc__title">Задания</div>
+    <ul class="toc__list">
+      <li><a href="#w-01">W-01. Комплексное форматирование</a></li>
+      <li><a href="#w-02">W-02. Тестовое задание для WinWord</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+<script src="word-data.js"></script>
+<script>
+  // Подстановка данных варианта
+  (function() {
+    const input = document.getElementById('variant-input');
+    const result = document.querySelector('.task-variant-bar__result');
+    
+    function updateVariant() {
+      const n = parseInt(input.value);
+      if (!n || n < 1 || n > 30) {
+        result.textContent = '';
+        document.querySelectorAll('[data-variant-slot]').forEach(el => {
+          el.textContent = '—';
+        });
+        return;
+      }
+      
+      result.textContent = `Вариант ${n}`;
+      
+      // Подставляем W01
+      const w01 = window.PRACTICE_WORD.W01.variants[n - 1];
+      document.querySelector('[data-variant-slot="W01.title"]').textContent = w01.title;
+      document.querySelector('[data-variant-slot="W01.subtitle"]').textContent = w01.subtitle;
+      document.querySelector('[data-variant-slot="W01.author"]').textContent = w01.author;
+      document.querySelector('[data-variant-slot="W01.fontSize"]').textContent = w01.fontSize + ' pt';
+      document.querySelector('[data-variant-slot="W01.fontFamily"]').textContent = w01.fontFamily;
+      document.querySelector('[data-variant-slot="W01.pageOrientation"]').textContent = w01.pageOrientation;
+      document.querySelector('[data-variant-slot="W01.margins"]').textContent = w01.margins;
+      
+      // Streets
+      const streetsEl = document.querySelector('[data-variant-slot="W01.streets"]');
+      streetsEl.innerHTML = '<ul>' + w01.streets.map(s => `<li>${s}</li>`).join('') + '</ul>';
+      
+      // Text
+      const textEl = document.querySelector('[data-variant-slot="W01.text"]');
+      textEl.innerHTML = w01.text.split('\n').map(p => `<p>${p}</p>`).join('');
+      
+      // Подставляем W02
+      const w02 = window.PRACTICE_WORD.W02.variants[n - 1];
+      document.querySelector('[data-variant-slot="W02.title"]').textContent = w02.title;
+      document.querySelector('[data-variant-slot="W02.subtitle"]').textContent = w02.subtitle;
+      document.querySelector('[data-variant-slot="W02.salutation"]').textContent = w02.salutation;
+      document.querySelector('[data-variant-slot="W02.signature"]').textContent = w02.signature;
+      document.querySelector('[data-variant-slot="W02.productName"]').textContent = w02.productName;
+      
+      // Expenses
+      const expensesEl = document.querySelector('[data-variant-slot="W02.expenses"]');
+      expensesEl.innerHTML = '<table class="data"><thead><tr><th>Операция</th><th>Минуты</th></tr></thead><tbody>' +
+        w02.expenses.map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`).join('') +
+        '</tbody></table>';
+    }
+    
+    input.addEventListener('input', updateVariant);
+    
+    // Восстановление из localStorage
+    const saved = localStorage.getItem('practice-variant');
+    if (saved) {
+      input.value = saved;
+      updateVariant();
+    }
+    
+    // Сохранение
+    input.addEventListener('change', () => {
+      localStorage.setItem('practice-variant', input.value);
+    });
+  })();
+</script>
+</body>
+</html>

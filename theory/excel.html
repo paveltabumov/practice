@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Теоретический справочник по Microsoft Excel: ячейки, ссылки, формулы, функции, сводные таблицы, диаграммы, макросы.">
+  <title>Теория: Excel — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout layout--toc">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="index.html">Введение</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html" class="is-active">Excel</a>
+        <a href="vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="../practice/index.html">Введение</a>
+        <a href="../practice/word.html">Word</a>
+        <a href="../practice/excel.html">Excel</a>
+        <a href="../practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="index.html" class="breadcrumbs__item">Теория</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Excel</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Excel</h1>
+      <p class="lead">
+        Справочник по табличному процессору Microsoft Excel.
+        Темы идут в порядке практических заданий: сначала ячейки и ссылки,
+        потом формулы, функции, сводные таблицы и макросы.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">📖</div>
+        <div class="callout__body">
+          <div class="callout__title">Как пользоваться</div>
+          <p>
+            Откройте нужную тему через оглавление справа или найдите команду
+            поиском по странице (<kbd>Ctrl</kbd>+<kbd>F</kbd>).
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           1. Интерфейс и лист
+           ============================================================ -->
+      <section class="topic" id="interface">
+        <h2 class="topic__title">Интерфейс и лист</h2>
+        <p class="topic__lead">
+          Документ Excel называется <em>рабочей книгой</em> и состоит из листов.
+          Основной элемент — ячейка на пересечении строки и столбца.
+        </p>
+
+        <figure class="screenshot screenshot--placeholder" data-label="окно Excel: лента, строка формул, ярлыки листов">
+          <img src="../assets/img/excel/excel-interface.png" alt="Интерфейс Excel">
+          <figcaption>Рис. 1. Основные элементы окна Excel</figcaption>
+        </figure>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Основные элементы</div>
+            <ul>
+              <li><strong>Строка формул</strong> — показывает содержимое активной ячейки</li>
+              <li><strong>Поле имени</strong> — адрес активной ячейки или диапазона</li>
+              <li><strong>Ярлыки листов</strong> — внизу; правый клик → переименовать</li>
+              <li><strong>Адрес ячейки</strong> — столбец (A…IV) + номер строки</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Полезные клавиши</div>
+            <ul>
+              <li><kbd>Ctrl</kbd>+<kbd>Home</kbd> — в начало листа</li>
+              <li><kbd>Ctrl</kbd>+<kbd>End</kbd> — к последней заполненной ячейке</li>
+              <li><kbd>F4</kbd> — переключение типа ссылки при вводе</li>
+              <li><kbd>Ctrl</kbd>+<kbd>Enter</kbd> — заполнить выделение одним значением</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Данные на нескольких листах, а имена листов — <code>Лист1</code>, <code>Лист2</code>.</li>
+              <li>Пропущенные строки внутри таблицы — ломают сортировку и сводные.</li>
+              <li>Заголовки столбцов в одной ячейке вместо отдельного столбца на признак.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Листы переименованы осмысленно</li>
+              <li>У таблицы один заголовок в первой строке</li>
+              <li>Нет пустых строк внутри данных</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           2. Типы данных
+           ============================================================ -->
+      <section class="topic" id="data">
+        <h2 class="topic__title">Типы данных</h2>
+        <p class="topic__lead">
+          Excel сам определяет тип введённого значения. Это влияет на выравнивание,
+          возможность расчётов и на результат формул.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Типы значений</div>
+            <ul>
+              <li><strong>Числа</strong> — по правому краю</li>
+              <li><strong>Текст</strong> — по левому краю</li>
+              <li><strong>Дата/время</strong> — <code>01.01.2025</code>, <code>12:30</code></li>
+              <li><strong>Логические</strong> — <code>ИСТИНА</code> / <code>ЛОЖЬ</code></li>
+              <li><strong>Формулы</strong> — начинаются со знака <code>=</code></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Форматы</div>
+            <ul>
+              <li>Денежный — <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>4</kbd></li>
+              <li>Процентный — <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd></li>
+              <li>Числовой с разделителем — <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></li>
+              <li>Общий — <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>~</kbd></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Число введено как текст (виден зелёный треугольник в углу ячейки).</li>
+              <li>Дата введена как <code>01/01/25</code> там, где ожидается <code>01.01.2025</code>.</li>
+              <li>Сумма чисел не считается, потому что ячейки текстовые.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Числа выровнены по правому краю</li>
+              <li>Даты в едином формате по всему столбцу</li>
+              <li>Нет «зелёных уголков» на ячейках с числами</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           3. Ссылки
+           ============================================================ -->
+      <section class="topic" id="links">
+        <h2 class="topic__title">Ссылки</h2>
+        <p class="topic__lead">
+          Ссылка указывает Excel, из какой ячейки брать значение.
+          Главное различие — <em>относительная</em> ссылка меняется при копировании,
+          <em>абсолютная</em> — нет.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Виды ссылок</div>
+            <ul>
+              <li><code>A1</code> — относительная (обе части меняются)</li>
+              <li><code>$A$1</code> — абсолютная (обе части фиксированы)</li>
+              <li><code>$A1</code> — фиксирован столбец</li>
+              <li><code>A$1</code> — фиксирована строка</li>
+              <li><code>Лист1!A1</code> — ссылка на другой лист</li>
+              <li><code>'Имя листа'!A1</code> — если в имени пробелы</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Клавиши</div>
+            <ul>
+              <li><kbd>F4</kbd> — циклически менять тип ссылки при вводе формулы</li>
+              <li><kbd>F2</kbd> — редактировать ячейку, цветные рамки показывают ссылки</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Формулу скопировали, а ссылку на константу не зафиксировали — расчёт поехал.</li>
+              <li>Убрали <code>$</code> вручную вместо <kbd>F4</kbd>.</li>
+              <li>Ссылка на другой лист записана без имени листа.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Константы в формулах зафиксированы знаком <code>$</code></li>
+              <li>При протягивании формулы расчёт остаётся корректным</li>
+              <li>Ссылки на другие листы работают</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. Формулы
+           ============================================================ -->
+      <section class="topic" id="formulas">
+        <h2 class="topic__title">Формулы</h2>
+        <p class="topic__lead">
+          Формула всегда начинается со знака <code>=</code>. Внутри — числа,
+          ссылки, имена функций и операторы.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Операторы</div>
+            <ul>
+              <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> — арифметика</li>
+              <li><code>^</code> — степень</li>
+              <li><code>%</code> — процент</li>
+              <li><code>&amp;</code> — сцепка строк</li>
+              <li><code>=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;&gt;</code> — сравнение</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Ошибки в формулах</div>
+            <ul>
+              <li><code>#ДЕЛ/0!</code> — деление на ноль</li>
+              <li><code>#ИМЯ?</code> — опечатка в имени функции</li>
+              <li><code>#ЗНАЧ!</code> — несовместимые типы аргументов</li>
+              <li><code>#ССЫЛКА!</code> — неверная ссылка на ячейку</li>
+              <li><code>#Н/Д</code> — нет доступного значения</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Формула начинается с <code>=</code></li>
+              <li>Нет ячеек с ошибкой <code>#…</code></li>
+              <li>Порядок операций задан скобками, если нужно</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           5. Встроенные функции
+           ============================================================ -->
+      <section class="topic" id="functions">
+        <h2 class="topic__title">Встроенные функции</h2>
+        <p class="topic__lead">
+          Функция — готовая формула с именем. Вызывается через мастер функций
+          или вводом с клавиатуры.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Основные функции</div>
+            <ul>
+              <li><code>СУММ(диапазон)</code> — сумма</li>
+              <li><code>СРЗНАЧ(диапазон)</code> — среднее</li>
+              <li><code>МИН</code>, <code>МАКС</code> — минимум и максимум</li>
+              <li><code>СЧЁТ</code>, <code>СЧЁТЗ</code> — количество чисел / непустых</li>
+              <li><code>ЕСЛИ(условие; да; нет)</code> — ветвление</li>
+              <li><code>СУММЕСЛИ</code>, <code>СЧЁТЕСЛИ</code> — с условием</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Как вставить</div>
+            <ul>
+              <li><em>Вставка → Функция</em> — мастер функций</li>
+              <li>Кнопка <code>Σ</code> — автосумма</li>
+              <li><kbd>Shift</kbd>+<kbd>F3</kbd> — открыть мастер</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Диапазон в функции указан без учёта новых строк.</li>
+              <li>В <code>ЕСЛИ</code> перепутаны ветви «да» и «нет».</li>
+              <li>Использован текст вместо ссылки на ячейку с условием.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Диапазоны корректны, включают все строки</li>
+              <li>Функции возвращают ожидаемые значения</li>
+              <li>Условные функции проверены на двух-трёх строках</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           6. Сортировка и фильтры
+           ============================================================ -->
+      <section class="topic" id="sort-filter">
+        <h2 class="topic__title">Сортировка и фильтры</h2>
+        <p class="topic__lead">
+          Инструменты для работы с таблицей как с базой данных: переставить
+          строки по значению столбца или показать только нужные записи.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li><em>Данные → Сортировка</em> — до 3 уровней</li>
+              <li><em>Данные → Фильтр</em> — автофильтр по столбцу</li>
+              <li>Числовой фильтр, текстовый фильтр, фильтр по дате</li>
+              <li>«Условие» — расширенный фильтр</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Сортировка захватила заголовки таблицы.</li>
+              <li>Внутри таблицы есть пустые строки — Excel теряет часть данных.</li>
+              <li>Перед сортировкой забыли сохранить исходный порядок.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Сортировка по всему диапазону, а не по одному столбцу</li>
+              <li>Заголовки не сместились</li>
+              <li>Фильтр можно снять — данные вернулись</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           7. Сводные таблицы
+           ============================================================ -->
+      <section class="topic" id="pivot">
+        <h2 class="topic__title">Сводные таблицы</h2>
+        <p class="topic__lead">
+          Сводная таблица — это способ быстро сгруппировать данные и посчитать
+          итоги: суммы, средние, количество — по категориям.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Как построить</div>
+            <ul>
+              <li><em>Вставка → Сводная таблица</em></li>
+              <li>Выбрать диапазон или таблицу</li>
+              <li>Перетащить поля в области: <em>Строки</em>, <em>Столбцы</em>, <em>Значения</em>, <em>Фильтры</em></li>
+              <li>Итог по умолчанию — сумма; изменить можно в настройках поля</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Данные в источнике не обновлены — сводная показывает старое.</li>
+              <li>В источнике есть пустые строки — сводная «теряет» часть данных.</li>
+              <li>Ожидали среднее, а Excel посчитал сумму.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Сводная обновлена (<em>Данные → Обновить</em>)</li>
+              <li>Итоги соответствуют ожидаемым</li>
+              <li>Названия строк и столбцов читаемые</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           8. Диаграммы
+           ============================================================ -->
+      <section class="topic" id="charts">
+        <h2 class="topic__title">Диаграммы</h2>
+        <p class="topic__lead">
+          Диаграмма — графическое представление чисел. Тип выбирается под задачу:
+          сравнение, динамика, доли.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Как построить</div>
+            <ul>
+              <li><em>Вставка → Диаграмма</em></li>
+              <li>Выделить диапазон с заголовками</li>
+              <li>Выбрать тип: гистограмма, линейчатая, круговая, график</li>
+              <li>Настроить подписи, легенду, оси — на вкладке <em>Конструктор</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Диаграмма не обновляется при изменении данных — данные вне диапазона.</li>
+              <li>Круговая диаграмма для 10+ категорий — нечитаемо.</li>
+              <li>Оси без подписей — непонятно, что сравнивается.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Тип соответствует задаче</li>
+              <li>Есть подписи осей и легенда</li>
+              <li>Данные диаграммы обновляются автоматически</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           9. Макросы
+           ============================================================ -->
+      <section class="topic" id="macros">
+        <h2 class="topic__title">Макросы</h2>
+        <p class="topic__lead">
+          Макрос — записанная последовательность действий в Excel.
+          Удобен для повторяющихся операций: форматирование, заполнение,
+          однотипные вычисления.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Как записать</div>
+            <ul>
+              <li><em>Разработчик → Запись макроса</em> (или <em>Вид → Макросы</em>)</li>
+              <li>Задать имя — латиницей, без пробелов</li>
+              <li>Назначить сочетание клавиш</li>
+              <li>Выполнить действия → остановить запись</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Клавиши</div>
+            <ul>
+              <li><kbd>Alt</kbd>+<kbd>F8</kbd> — список макросов</li>
+              <li><kbd>Alt</kbd>+<kbd>F11</kbd> — редактор VBA</li>
+              <li><kbd>Ctrl</kbd>+<kbd>Break</kbd> — прервать макрос</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Файл сохранён как <code>.xlsx</code> — макросы пропали.</li>
+              <li>Имя макроса с пробелами или на кириллице.</li>
+              <li>Кнопка на листе не привязана к макросу.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Файл сохранён как <code>.xlsm</code></li>
+              <li>Макрос назначен кнопке или клавишам</li>
+              <li>Макрос работает при повторном запуске</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           10. Печать
+           ============================================================ -->
+      <section class="topic" id="print">
+        <h2 class="topic__title">Печать и область печати</h2>
+        <p class="topic__lead">
+          Excel печатает не «как видно на экране», а по настройкам страницы.
+          Их нужно задать заранее, иначе таблица «уползёт» на 10 листов.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li><em>Разметка страницы → Параметры страницы</em></li>
+              <li>Область печати — выделить диапазон → <em>Область печати → Задать</em></li>
+              <li>Колонтитулы — <em>Вставка → Колонтитулы</em></li>
+              <li>Предварительный просмотр — <kbd>Ctrl</kbd>+<kbd>P</kbd></li>
+              <li>Повторять строки на каждой странице — <em>Печать заголовков</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Область печати не задана — печатается весь лист.</li>
+              <li>Заголовки не повторяются на следующих страницах.</li>
+              <li>Таблица не помещается по ширине — нет настройки «вписать на 1 страницу».</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Область печати задана</li>
+              <li>Заголовки повторяются</li>
+              <li>Колонтитул с ФИО, группой и вариантом есть на каждой странице</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="../practice/excel.html">К заданиям Excel →</a>
+        <a class="btn btn--ghost" href="vba.html">Дальше: теория VBA</a>
+        <a class="btn btn--ghost" href="index.html">← К оглавлению теории</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== TOC справа ===================== -->
+  <aside class="toc">
+    <div class="toc__title">На этой странице</div>
+    <ul class="toc__list">
+      <li><a href="#interface">Интерфейс и лист</a></li>
+      <li><a href="#data">Типы данных</a></li>
+      <li><a href="#links">Ссылки</a></li>
+      <li><a href="#formulas">Формулы</a></li>
+      <li><a href="#functions">Встроенные функции</a></li>
+      <li><a href="#sort-filter">Сортировка и фильтры</a></li>
+      <li><a href="#pivot">Сводные таблицы</a></li>
+      <li><a href="#charts">Диаграммы</a></li>
+      <li><a href="#macros">Макросы</a></li>
+      <li><a href="#print">Печать</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Практические задания по VBA: переменные, условия, циклы, процедуры, функции. Персонализированные данные по варианту.">
+  <title>Практика: VBA — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout layout--toc">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="../theory/index.html">Введение</a>
+        <a href="../theory/word.html">Word</a>
+        <a href="../theory/excel.html">Excel</a>
+        <a href="../theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="index.html">Введение</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="vba.html" class="is-active">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="index.html" class="breadcrumbs__item">Практика</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">VBA</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Практика: VBA</h1>
+      <p class="lead">
+        Шесть заданий по программированию в Excel на VBA: переменные, условия,
+        циклы, процедуры и функции, стандартные функции. Исходные данные зависят
+        от варианта — введите номер варианта сверху.
+      </p>
+
+      <div class="task-variant-bar">
+        <span class="task-variant-bar__label">Мой вариант (1–30):</span>
+        <input type="number" min="1" max="30" placeholder="Номер варианта" autocomplete="off" id="variant-input">
+        <span class="task-variant-bar__result"></span>
+      </div>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">ℹ️</div>
+        <div class="callout__body">
+          <div class="callout__title">Про имена модулей</div>
+          <p>
+            В заданиях V-02…V-06 имена модулей и процедур содержат номер варианта
+            (например, <code>КонтрольноеЗадание_В07</code>). Это обязательное
+            требование — по нему проверяется, что работу выполнял именно ваш вариант.
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           V-01
+           ============================================================ -->
+      <section class="task" id="v-01">
+        <header class="task__head">
+          <span class="badge badge--accent">V-01</span>
+          <h2 class="task__title">Переменные и типы данных</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> научиться объявлять переменные разных типов,
+          вводить значения через <code>InputBox</code> и контролировать их
+          в окне отладки.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Значения для ввода:</strong></p>
+            <div data-variant-slot="V01.numbers">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте новый модуль <code>ЧисловыеПеременные</code>.</li>
+            <li>Укажите в начале модуля <code>Option Explicit</code>.</li>
+            <li>Напишите процедуру <code>ЗапросЧисел</code>, которая объявляет шесть
+              переменных разных типов: <code>Byte</code>, <code>Integer</code>,
+              <code>Long</code>, <code>Currency</code>, <code>Single</code>,
+              <code>Double</code>.</li>
+            <li>Каждое значение вводится через <code>InputBox</code>.</li>
+            <li>Для каждой переменной добавьте её в окно отладки
+              (<em>Debug → Add Watch</em>) или выведите через <code>Debug.Print</code>.</li>
+            <li>Установите точку останова в конце процедуры (<kbd>F9</kbd>).</li>
+            <li>Запустите процедуру (<kbd>F5</kbd>) и введите значения из блока «Что дано».</li>
+            <li>Проверьте, что при вводе значения вне диапазона типа возникает ошибка
+              <em>Overflow</em>, и объясните, почему.</li>
+            <li>Замените типы переменных на сокращённые обозначения:
+              <code>A1 As Byte</code> → <code>A1%</code> и так далее.</li>
+            <li>Сохраните книгу как <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Модуль <code>ЧисловыеПеременные</code> с процедурой <code>ЗапросЧисел</code>.</li>
+            <li>Скриншоты: окно редактора VBA с кодом, окно Watch со значениями переменных.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем <code>Integer</code> отличается от <code>Long</code>? Когда нужен каждый?</li>
+            <li>Почему <code>Single</code> и <code>Double</code> — не одно и то же?</li>
+            <li>Что произойдёт, если ввести число вне диапазона типа?</li>
+            <li>Зачем нужен <code>Option Explicit</code>?</li>
+            <li>Что означает сокращение <code>A1%</code>?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           V-02
+           ============================================================ -->
+      <section class="task" id="v-02">
+        <header class="task__head">
+          <span class="badge badge--accent">V-02</span>
+          <h2 class="task__title">Условия: вознаграждение менеджера</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> применить <code>If…Then…ElseIf…Else</code>
+          и встроенную функцию <code>DateDiff</code> для расчёта вознаграждения
+          в зависимости от суммы сделки и стажа.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Валюта:</strong> <span data-variant-slot="V02.currency">—</span></p>
+            <p><strong>Пороги сделки:</strong></p>
+            <div data-variant-slot="V02.thresholds">—</div>
+            <p><strong>Ставки:</strong></p>
+            <div data-variant-slot="V02.rates">—</div>
+            <p><strong>Бонус за стаж свыше <span data-variant-slot="V02.bonusYears">—</span> лет:</strong>
+              <span data-variant-slot="V02.bonusRate">—</span></p>
+            <p><strong>Менеджеры:</strong></p>
+            <div data-variant-slot="V02.managers">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте функцию <code>Вознаграждение</code> с двумя аргументами:
+              <code>СуммаСделки As Single</code> и <code>ДатаПриемаНаРаботу As Date</code>.</li>
+            <li>Внутри функции реализуйте прогрессивную шкалу ставок из блока
+              «Что дано»: до первого порога — первая ставка, до второго — вторая,
+              свыше — третья.</li>
+            <li>Если сотрудник работает больше <em>N</em> лет (см. «Что дано»),
+              добавьте бонусный процент к вознаграждению.</li>
+            <li>Постройте на листе таблицу с фамилиями, суммами сделки и датами приёма
+              из блока «Что дано».</li>
+            <li>В отдельном столбце посчитайте вознаграждение через созданную функцию.</li>
+            <li>Проверьте расчёт для каждого менеджера вручную и сравните с результатом функции.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Функция <code>Вознаграждение</code> в отдельном модуле.</li>
+            <li>Таблица с посчитанными значениями.</li>
+            <li>Скриншот: код функции и заполненная таблица.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем <code>ElseIf</code> отличается от вложенного <code>If</code>?</li>
+            <li>Почему порядок проверок в цепочке <code>If</code> важен?</li>
+            <li>Что делает <code>DateDiff("yyyy", …)</code>?</li>
+            <li>Как вызвать функцию пользователя из ячейки Excel?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           V-03
+           ============================================================ -->
+      <section class="task" id="v-03">
+        <header class="task__head">
+          <span class="badge badge--accent">V-03</span>
+          <h2 class="task__title">Условия: электроэнергия, кирпич, абитуриенты</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> закрепить <code>If…Then…Else</code> и составные условия
+          (<code>And</code>, <code>Or</code>) на трёх задачах.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Электроэнергия — тарифы:</strong></p>
+            <div data-variant-slot="V03.electricity">—</div>
+            <p><strong>Кирпич — размер отверстия и кирпичи:</strong></p>
+            <div data-variant-slot="V03.brick">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li><strong>Задача 1.</strong> Функция <code>Электроэнергия</code> —
+              считает оплату по прогрессивной шкале (тариф зависит от потребления).</li>
+            <li>Постройте в Excel таблицу со значениями потребления из «Что дано»
+              и посчитайте оплату через функцию.</li>
+            <li><strong>Задача 2.</strong> Функция <code>Кирпич</code> — принимает
+              <code>a</code>, <code>b</code>, <code>c</code> (стороны кирпича)
+              и <code>x</code> (сторона квадратного отверстия). Возвращает
+              «пройдёт» / «не пройдёт».</li>
+            <li>Условие: кирпич проходит, если хотя бы две его стороны
+              не превосходят <code>x</code>.</li>
+            <li>Постройте таблицу со всеми кирпичами из «Что дано»,
+              посчитайте результат функцией.</li>
+            <li><strong>Задача 3 (дополнительно).</strong> Функция <code>Поступление</code> —
+              принимает четыре оценки абитуриента. Если за любой экзамен меньше 10 —
+              «провалил экзамен»; если сумма ≥ 80 — «поступил»; иначе — «не поступил».</li>
+            <li>Постройте таблицу с пятью абитуриентами и посчитайте результат.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Три функции: <code>Электроэнергия</code>, <code>Кирпич</code>,
+              <code>Поступление</code>.</li>
+            <li>Три таблицы с расчётами.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Как записать составное условие «2 &lt; x &lt; 5» на VBA?</li>
+            <li>В каком порядке выполняются <code>And</code> и <code>Or</code>?</li>
+            <li>Как вернуть из функции строку, а не число?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           V-04
+           ============================================================ -->
+      <section class="task" id="v-04">
+        <header class="task__head">
+          <span class="badge badge--accent">V-04</span>
+          <h2 class="task__title">Циклы For…Next</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> освоить цикл <code>For…Next</code>, в том числе
+          вложенный, на задачах про сумму чисел, комаров и треугольник.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Пары чисел для суммы:</strong></p>
+            <div data-variant-slot="V04.sums">—</div>
+            <p><strong>Комары (в первый день, день):</strong></p>
+            <div data-variant-slot="V04.frog">—</div>
+            <p><strong>Число рядов треугольника:</strong>
+              <span data-variant-slot="V04.triangle">—</span></p>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li><strong>Задача 1.</strong> Функция <code>Сумма_чисел</code> — принимает
+              два числа, возвращает сумму всех целых от первого до второго
+              включительно, независимо от порядка аргументов.</li>
+            <li>Постройте таблицу со всеми парами из «Что дано» и посчитайте сумму.</li>
+            <li><strong>Задача 2.</strong> Функции <code>Комары</code> и <code>ВсегоКомаров</code> —
+              моделируют ситуацию, когда лягушка каждый день съедает вдвое больше
+              комаров, чем в предыдущий.</li>
+            <li>Постройте таблицу с исходными значениями из «Что дано» и расчётом
+              на текущий и накопленный итог.</li>
+            <li><strong>Задача 3.</strong> Процедура <code>ТреугольникЧисел</code> —
+              запрашивает число рядов, выводит через <code>MsgBox</code> треугольник
+              из чисел:
+              <pre>1
+1 2
+1 2 3
+…</pre>
+            </li>
+            <li>Измените процедуру так, чтобы треугольник был перевёрнутым:
+              <pre>1 1 1 1 1
+2 2 2 2
+3 3 3
+…</pre>
+            </li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Функции <code>Сумма_чисел</code>, <code>Комары</code>, <code>ВсегоКомаров</code>.</li>
+            <li>Процедура <code>ТреугольникЧисел</code> (два варианта).</li>
+            <li>Скриншоты: результат работы <code>MsgBox</code>.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Что делает <code>Step</code> в <code>For…Next</code>?</li>
+            <li>Как организовать обратный цикл?</li>
+            <li>Почему во вложенных циклах нужны разные переменные?</li>
+            <li>Что произойдёт, если изменить переменную цикла внутри тела?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           V-05
+           ============================================================ -->
+      <section class="task" id="v-05">
+        <header class="task__head">
+          <span class="badge badge--accent">V-05</span>
+          <h2 class="task__title">Процедуры и функции: окружности и прямоугольники</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> научиться писать собственные функции пользователя
+          и вызывать их из процедур и ячеек Excel.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>Радиусы окружностей:</strong></p>
+            <div data-variant-slot="V05.circleRadii">—</div>
+            <p><strong>Стороны прямоугольников:</strong></p>
+            <div data-variant-slot="V05.rectangles">—</div>
+            <p><strong>Два прямоугольника для общей площади:</strong></p>
+            <div data-variant-slot="V05.twoRectangles">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте модуль <code>ФункцииОкружности</code>.</li>
+            <li>Напишите функцию <code>Длина_окружности(Радиус As Single) As Single</code>
+              (формула <code>2πR</code>).</li>
+            <li>Напишите функцию <code>Площадь_круга(Радиус As Single) As Single</code>
+              (формула <code>πR²</code>).</li>
+            <li>Константу <code>Pi = 3.141592653</code> объявите через <code>Const</code>.</li>
+            <li>Постройте таблицу с радиусами из «Что дано» и рассчитайте длину
+              и площадь для каждого.</li>
+            <li>Напишите функцию <code>ПериметрПрямоугольника(a, b)</code> и
+              <code>ПлощадьПрямоугольника(a, b)</code>.</li>
+            <li>Постройте таблицу со сторонами из «Что дано» и рассчитайте
+              периметр и площадь.</li>
+            <li>Напишите функцию <code>СуммаДлинДвухОкружностей(R1, R2)</code> —
+              возвращает сумму длин двух окружностей.</li>
+            <li>Напишите функцию <code>Площадь(a1, b1, a2, b2)</code> —
+              принимает стороны двух прямоугольников и возвращает их общую площадь.</li>
+            <li>Проверьте обе функции на значениях из «Что дано».</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Все функции в модулях с осмысленными именами.</li>
+            <li>Таблицы с расчётами.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Чем функция отличается от процедуры?</li>
+            <li>Что означает <code>As Single</code> в объявлении функции?</li>
+            <li>Можно ли вызвать функцию пользователя из другой функции?</li>
+            <li>Где в Excel можно использовать собственные функции?</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           V-06
+           ============================================================ -->
+      <section class="task" id="v-06">
+        <header class="task__head">
+          <span class="badge badge--accent">V-06</span>
+          <h2 class="task__title">Стандартные функции: строки и даты</h2>
+        </header>
+
+        <p class="task__goal">
+          <strong>Цель:</strong> применить встроенные функции VBA для работы
+          со строками, датами и преобразования типов.
+        </p>
+
+        <div class="task__section">
+          <h3>Что дано (по вашему варианту)</h3>
+          <div class="task__variant-data">
+            <p><strong>ФИО для инициалов:</strong></p>
+            <div data-variant-slot="V06.names">—</div>
+            <p><strong>Строки с годом 2010:</strong></p>
+            <div data-variant-slot="V06.strings">—</div>
+            <p><strong>Даты:</strong></p>
+            <div data-variant-slot="V06.dates">—</div>
+          </div>
+        </div>
+
+        <div class="task__section">
+          <h3>Что нужно сделать</h3>
+          <ol>
+            <li>Создайте модуль <code>КонтрольноеЗадание_В&lt;вариант&gt;</code>.</li>
+            <li><strong>Задача 1.</strong> Функция <code>Инициалы(Фамилия, Имя, Отчество)</code> —
+              возвращает строку вида «Иванов И. И.».</li>
+            <li>Постройте таблицу с ФИО из «Что дано» и посчитайте инициалы.</li>
+            <li><strong>Задача 2.</strong> Процедура <code>Замена</code> —
+              запрашивает строку и заменяет в ней <strong>2010</strong> на
+              <strong>2011</strong> (через <code>Replace</code>).</li>
+            <li>Проверьте процедуру на строках из «Что дано».</li>
+            <li><strong>Задача 3.</strong> Функция <code>КоличествоМесяцев(Дата)</code> —
+              вычисляет, сколько полных месяцев между введённой датой
+              и текущей (через <code>DateDiff("m", …)</code>).</li>
+            <li>Постройте таблицу с датами из «Что дано» и посчитайте количество месяцев.</li>
+            <li><strong>Задача 4.</strong> Процедура <code>ИнтервалДат</code> —
+              добавляет к текущей дате один месяц и выводит результат
+              в окне отладки через <code>Debug.Print</code>.</li>
+          </ol>
+        </div>
+
+        <div class="task__section">
+          <h3>Что сдать</h3>
+          <ul>
+            <li>Файл <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>.</li>
+            <li>Модуль <code>КонтрольноеЗадание_В&lt;вариант&gt;</code> со всеми функциями и процедурами.</li>
+            <li>Таблицы с расчётами.</li>
+            <li>Скриншоты: результат работы процедур в окне Immediate.</li>
+          </ul>
+        </div>
+
+        <div class="task__section">
+          <h3>Вопросы к защите</h3>
+          <ol>
+            <li>Как работает <code>Replace</code>? Какие у неё аргументы?</li>
+            <li>Чем <code>Left</code> отличается от <code>Mid</code>?</li>
+            <li>Как из даты получить день, месяц, год?</li>
+            <li>Что означает интервал <code>"m"</code> в <code>DateDiff</code>?</li>
+            <li>Почему <code>CStr</code> и <code>Val</code> дают разный результат?</li>
+          </ol>
+        </div>
+      </section>
+
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="excel.html">← К заданиям Excel</a>
+        <a class="btn btn--ghost" href="../theory/vba.html">Теория VBA</a>
+        <a class="btn btn--ghost" href="../how-to.html">Как проходить</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== TOC справа ===================== -->
+  <aside class="toc toc--tasks">
+    <div class="toc__title">Задания</div>
+    <ul class="toc__list">
+      <li><a href="#v-01">V-01. Переменные и типы</a></li>
+      <li><a href="#v-02">V-02. Условия: вознаграждение</a></li>
+      <li><a href="#v-03">V-03. Условия: три задачи</a></li>
+      <li><a href="#v-04">V-04. Циклы For…Next</a></li>
+      <li><a href="#v-05">V-05. Процедуры и функции</a></li>
+      <li><a href="#v-06">V-06. Стандартные функции</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+<script src="vba-data.js"></script>
+<script>
+  // Подстановка данных варианта
+  (function() {
+    const input = document.getElementById('variant-input');
+    const result = document.querySelector('.task-variant-bar__result');
+    
+    function formatPercent(val) {
+      return (val * 100).toFixed(1) + '%';
+    }
+    
+    function renderList(items) {
+      return '<ul>' + items.map(item => `<li>${item}</li>`).join('') + '</ul>';
+    }
+    
+    function renderTable(headers, rows) {
+      let html = '<table class="data"><thead><tr>';
+      headers.forEach(h => html += `<th>${h}</th>`);
+      html += '</tr></thead><tbody>';
+      rows.forEach(row => {
+        html += '<tr>';
+        row.forEach(cell => html += `<td>${cell}</td>`);
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+      return html;
+    }
+    
+    function updateVariant() {
+      const n = parseInt(input.value);
+      if (!n || n < 1 || n > 30) {
+        result.textContent = '';
+        document.querySelectorAll('[data-variant-slot]').forEach(el => {
+          el.textContent = '—';
+        });
+        return;
+      }
+      
+      result.textContent = `Вариант ${n}`;
+      
+      // V01
+      const v01 = window.PRACTICE_VBA.V01.variants[n - 1];
+      document.querySelector('[data-variant-slot="V01.numbers"]').innerHTML = renderTable(
+        ['Переменная', 'Значение'],
+        v01.numbers
+      );
+      
+      // V02
+      const v02 = window.PRACTICE_VBA.V02.variants[n - 1];
+      document.querySelector('[data-variant-slot="V02.currency"]').textContent = v02.currency;
+      document.querySelector('[data-variant-slot="V02.thresholds"]').innerHTML = 
+        `<ul>
+          <li>До <code>${v02.thresholds.first.toLocaleString()}</code> ${v02.currency}</li>
+          <li>До <code>${v02.thresholds.second.toLocaleString()}</code> ${v02.currency}</li>
+          <li>Свыше <code>${v02.thresholds.second.toLocaleString()}</code> ${v02.currency}</li>
+        </ul>`;
+      document.querySelector('[data-variant-slot="V02.rates"]').innerHTML = 
+        `<ul>
+          <li>Первая ставка: <code>${formatPercent(v02.rates.first)}</code></li>
+          <li>Вторая ставка: <code>${formatPercent(v02.rates.second)}</code></li>
+          <li>Третья ставка: <code>${formatPercent(v02.rates.third)}</code></li>
+        </ul>`;
+      document.querySelector('[data-variant-slot="V02.bonusYears"]').textContent = v02.bonusYears;
+      document.querySelector('[data-variant-slot="V02.bonusRate"]').textContent = formatPercent(v02.bonusRate);
+      document.querySelector('[data-variant-slot="V02.managers"]').innerHTML = renderTable(
+        ['Фамилия', 'Сумма сделки', 'Дата приёма'],
+        v02.managers.map(m => [m[0], m[1].toLocaleString() + ' ' + v02.currency, m[2]])
+      );
+      
+      // V03
+      const v03 = window.PRACTICE_VBA.V03.variants[n - 1];
+      document.querySelector('[data-variant-slot="V03.electricity"]').innerHTML = 
+        `<p>Нижний лимит: <code>${v03.electricity.limitLow}</code> кВт·ч</p>
+         <p>Верхний лимит: <code>${v03.electricity.limitHigh}</code> кВт·ч</p>
+         <p>Тарифы: <code>${v03.electricity.rateLow}</code>, <code>${v03.electricity.rateMid}</code>, <code>${v03.electricity.rateHigh}</code> руб./кВт·ч</p>
+         <p>Значения для расчёта: <code>${v03.electricity.values.join(', ')}</code> кВт·ч</p>`;
+      document.querySelector('[data-variant-slot="V03.brick"]').innerHTML = 
+        `<p>Размер отверстия: <code>${v03.brick.size}</code> × <code>${v03.brick.size}</code></p>` +
+        renderTable(['Кирпич', 'a', 'b', 'c'], v03.brick.items);
+      
+      // V04
+      const v04 = window.PRACTICE_VBA.V04.variants[n - 1];
+      document.querySelector('[data-variant-slot="V04.sums"]').innerHTML = renderTable(
+        ['Число 1', 'Число 2'],
+        v04.sums
+      );
+      document.querySelector('[data-variant-slot="V04.frog"]').innerHTML = renderTable(
+        ['Комаров в первый день', 'День'],
+        v04.frog
+      );
+      document.querySelector('[data-variant-slot="V04.triangle"]').textContent = v04.triangle;
+      
+      // V05
+      const v05 = window.PRACTICE_VBA.V05.variants[n - 1];
+      document.querySelector('[data-variant-slot="V05.circleRadii"]').innerHTML = 
+        '<code>' + v05.circleRadii.join(', ') + '</code>';
+      document.querySelector('[data-variant-slot="V05.rectangles"]').innerHTML = renderTable(
+        ['Сторона a', 'Сторона b'],
+        v05.rectangles
+      );
+      document.querySelector('[data-variant-slot="V05.twoRectangles"]').innerHTML = 
+        `<p>Прямоугольник 1: <code>${v05.twoRectangles[0][0]}</code> × <code>${v05.twoRectangles[0][1]}</code></p>
+         <p>Прямоугольник 2: <code>${v05.twoRectangles[1][0]}</code> × <code>${v05.twoRectangles[1][1]}</code></p>`;
+      
+      // V06
+      const v06 = window.PRACTICE_VBA.V06.variants[n - 1];
+      document.querySelector('[data-variant-slot="V06.names"]').innerHTML = renderTable(
+        ['Фамилия', 'Имя', 'Отчество'],
+        v06.names
+      );
+      document.querySelector('[data-variant-slot="V06.strings"]').innerHTML = renderList(v06.strings);
+      document.querySelector('[data-variant-slot="V06.dates"]').innerHTML = renderList(v06.dates);
+    }
+    
+    input.addEventListener('input', updateVariant);
+    
+    // Восстановление из localStorage
+    const saved = localStorage.getItem('practice-variant');
+    if (saved) {
+      input.value = saved;
+      updateVariant();
+    }
+    
+    // Сохранение
+    input.addEventListener('change', () => {
+      localStorage.setItem('practice-variant', input.value);
+    });
+  })();
+</script>
+</body>
+</html>

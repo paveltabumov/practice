@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Теоретический справочник по Microsoft Word: интерфейс, стили, таблицы, формулы, макросы. Горячие клавиши и чек-листы.">
+  <title>Теория: Word — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout layout--toc">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="index.html">Введение</a>
+        <a href="word.html" class="is-active">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <!-- Добавленная тобой ссылка -->
+        <a href="../practice/index.html">Введение</a> 
+        <a href="../practice/word.html">Word</a>
+        <a href="../practice/excel.html">Excel</a>
+        <a href="../practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="index.html" class="breadcrumbs__item">Теория</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Word</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Word</h1>
+      <p class="lead">
+        Справочник по текстовому процессору Microsoft Word.
+        Темы идут в том порядке, в котором встречаются в практических заданиях.
+        Каждая тема — короткая карточка: команды, горячие клавиши, ошибки и чек-лист.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">📖</div>
+        <div class="callout__body">
+          <div class="callout__title">Как пользоваться</div>
+          <p>
+            Не читайте всё подряд. Откройте нужную тему через оглавление справа
+            или найдите нужное сочетание клавиш поиском по странице
+            (<kbd>Ctrl</kbd>+<kbd>F</kbd>).
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           Тема 1. Интерфейс
+           ============================================================ -->
+      <section class="topic" id="interface">
+        <h2 class="topic__title">Интерфейс и документ</h2>
+        <p class="topic__lead">
+          Прежде чем что-то набирать — надо понять, где что находится.
+          Основная работа идёт через вкладки <em>Главная</em> и <em>Вставка</em>.
+        </p>
+
+        <figure class="screenshot screenshot--placeholder" data-label="лента Word и панель быстрого доступа">
+          <img src="../assets/img/word/word-interface.png" alt="Интерфейс Word">
+          <figcaption>Рис. 1. Основные элементы окна Word</figcaption>
+        </figure>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Основные вкладки</div>
+            <ul>
+              <li><strong>Главная</strong> — шрифт, абзац, стили, буфер обмена</li>
+              <li><strong>Вставка</strong> — таблицы, рисунки, символы, формулы, колонтитулы</li>
+              <li><strong>Ссылки</strong> — оглавление, сноски</li>
+              <li><strong>Вид</strong> — режимы отображения, масштаб</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Полезные клавиши</div>
+            <ul>
+              <li><kbd>Ctrl</kbd>+<kbd>N</kbd> — новый документ</li>
+              <li><kbd>Ctrl</kbd>+<kbd>S</kbd> — сохранить</li>
+              <li><kbd>Ctrl</kbd>+<kbd>Z</kbd> — отменить действие</li>
+              <li><kbd>F7</kbd> — проверка орфографии</li>
+              <li><kbd>Ctrl</kbd>+<kbd>F</kbd> — поиск по тексту</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Забыли сохранить под нужным именем — работа потерялась.</li>
+              <li>Работают в режиме «Черновик», а нужно — «Разметка страницы».</li>
+              <li>Масштаб не тот, что просили в задании.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Документ открыт, режим — <em>Разметка страницы</em></li>
+              <li>Масштаб соответствует заданию</li>
+              <li>Файл сохранён под правильным именем</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 2. Шрифт и абзац
+           ============================================================ -->
+      <section class="topic" id="font">
+        <h2 class="topic__title">Шрифт и абзац</h2>
+        <p class="topic__lead">
+          Форматирование символов и абзацев — база. Если делать его вручную
+          для каждого абзаца, работа займёт часы. Используйте <em>стили</em> (см. следующую тему).
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Где найти</div>
+            <ul>
+              <li>Шрифт — <em>Главная → Шрифт</em> или <kbd>Ctrl</kbd>+<kbd>D</kbd></li>
+              <li>Абзац — <em>Главная → Абзац</em> или правый клик → <em>Абзац</em></li>
+              <li>Линейка — <em>Вид → Линейка</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Клавиши</div>
+            <ul>
+              <li><kbd>Ctrl</kbd>+<kbd>B</kbd> — жирный</li>
+              <li><kbd>Ctrl</kbd>+<kbd>I</kbd> — курсив</li>
+              <li><kbd>Ctrl</kbd>+<kbd>U</kbd> — подчёркнутый</li>
+              <li><kbd>Ctrl</kbd>+<kbd>E</kbd> — по центру</li>
+              <li><kbd>Ctrl</kbd>+<kbd>L</kbd> / <kbd>R</kbd> / <kbd>J</kbd> — по левому / правому / ширине</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Отступ сделан пробелами, а не параметром «Первая строка».</li>
+              <li>Пустая строка вместо интервала «после абзаца».</li>
+              <li>Разрыв строки (<kbd>Shift</kbd>+<kbd>Enter</kbd>) вместо нового абзаца.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Гарнитура и кегль как в задании</li>
+              <li>Отступ первой строки — через <em>Абзац</em></li>
+              <li>Интервалы — через <em>Абзац</em>, а не пустыми строками</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 3. Стили и оглавление
+           ============================================================ -->
+      <section class="topic" id="styles">
+        <h2 class="topic__title">Стили и оглавление</h2>
+        <p class="topic__lead">
+          Стиль — это сохранённый набор параметров форматирования.
+          Стили заголовков — единственный способ сделать автоматическое оглавление.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li>Применить стиль — <em>Главная → Стили</em></li>
+              <li>Изменить стиль — правый клик по стилю → <em>Изменить</em></li>
+              <li>Вставить оглавление — <em>Ссылки → Оглавление</em></li>
+              <li>Обновить оглавление — <kbd>F9</kbd> или правый клик → <em>Обновить поле</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Заголовки оформлены «жирным», а не стилем <em>Заголовок 1</em>.</li>
+              <li>Оглавление вставлено как текст, а не как поле.</li>
+              <li>Перед сдачей забыли обновить оглавление (<kbd>F9</kbd>).</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Все заголовки — стилями <em>Заголовок 1/2/3</em></li>
+              <li>Оглавление собрано автоматически</li>
+              <li>Номера страниц в оглавлении совпадают с реальными</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 4. Страница и колонтитулы
+           ============================================================ -->
+      <section class="topic" id="page">
+        <h2 class="topic__title">Страница и колонтитулы</h2>
+        <p class="topic__lead">
+          Параметры страницы задаются до набора текста. Иначе после смены полей
+          всё «съедет».
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Где найти</div>
+            <ul>
+              <li>Поля, ориентация — <em>Макет → Параметры страницы</em></li>
+              <li>Размер бумаги — там же</li>
+              <li>Колонтитулы — <em>Вставка → Верхний / Нижний колонтитул</em></li>
+              <li>Номер страницы — <em>Вставка → Номер страницы</em></li>
+              <li>Разрыв страницы — <kbd>Ctrl</kbd>+<kbd>Enter</kbd></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Разрыв страницы — пустыми строками вместо <kbd>Ctrl</kbd>+<kbd>Enter</kbd>.</li>
+              <li>Номер страницы на титульном листе.</li>
+              <li>Колонтитул на одной странице вместо всех.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Поля и ориентация как в задании</li>
+              <li>Нумерация — снизу по центру (или как в задании)</li>
+              <li>Колонтитул присутствует на всех нужных страницах</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 5. Списки
+           ============================================================ -->
+      <section class="topic" id="lists">
+        <h2 class="topic__title">Списки</h2>
+        <p class="topic__lead">
+          Нумерованные, маркированные, многоуровневые. Оформляются кнопками
+          на вкладке <em>Главная</em>.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li>Маркированный — <em>Главная → Маркеры</em></li>
+              <li>Нумерованный — <em>Главная → Нумерация</em></li>
+              <li>Многоуровневый — <em>Главная → Многоуровневый список</em></li>
+              <li>Изменить уровень — <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Нумерация вручную цифрами и точками.</li>
+              <li>Список вставлен как таблица из одной колонки.</li>
+              <li>Отступы — пробелами, а не уровнем списка.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Список оформлен кнопкой <em>Нумерация</em></li>
+              <li>Уровни — через <kbd>Tab</kbd></li>
+              <li>Стиль маркера соответствует образцу</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 6. Таблицы
+           ============================================================ -->
+      <section class="topic" id="tables">
+        <h2 class="topic__title">Таблицы</h2>
+        <p class="topic__lead">
+          Таблицы нужны не только для данных, но и для «ровной» вёрстки —
+          например, для титульного листа.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li>Вставить — <em>Вставка → Таблица</em></li>
+              <li>Объединить ячейки — выделить → правый клик → <em>Объединить</em></li>
+              <li>Разбить ячейку — правый клик → <em>Разбить ячейки</em></li>
+              <li>Формула — <em>Макет → Формула</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Таблица нарисована линиями/подчёркиваниями, а не вставлена.</li>
+              <li>Столбцы «пляшут» из-за ручной ширины.</li>
+              <li>Сумма в таблице посчитана в голове, а не формулой <code>=SUM(ABOVE)</code>.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Таблица вставлена через <em>Вставка → Таблица</em></li>
+              <li>Объединения и разбиения ячеек соответствуют образцу</li>
+              <li>Итоги — через формулу, а не «руками»</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 7. Рисунки и объекты
+           ============================================================ -->
+      <section class="topic" id="objects">
+        <h2 class="topic__title">Рисунки и объекты</h2>
+        <p class="topic__lead">
+          Рисунки, буквица, WordArt, вставка из файла. Главный параметр —
+          <em>обтекание текстом</em>.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li>Рисунок — <em>Вставка → Рисунок</em></li>
+              <li>Обтекание — выделить рисунок → <em>Формат → Обтекание текстом</em></li>
+              <li>Буквица — <em>Вставка → Буквица</em></li>
+              <li>WordArt — <em>Вставка → WordArt</em></li>
+              <li>Рамка — <em>Дизайн → Границы страниц</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Рисунок «сдвигает» текст, потому что обтекание не задано.</li>
+              <li>Рамка не на всю страницу, а на один абзац.</li>
+              <li>Буквица выходит за пределы первой строки.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>У рисунка задано обтекание</li>
+              <li>Рамка охватывает всю страницу</li>
+              <li>Буквица ровно в начале абзаца</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 8. Колонки
+           ============================================================ -->
+      <section class="topic" id="columns">
+        <h2 class="topic__title">Колонки</h2>
+        <p class="topic__lead">
+          Газетная вёрстка в Word: несколько колонок на одной странице
+          с разделительной линией или без.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li>Разбить на колонки — <em>Макет → Колонки</em></li>
+              <li>Разделитель — <em>Макет → Колонки → Другие колонки → Разделитель</em></li>
+              <li>Применить к абзацу — выделить абзац и задать колонки</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Колонки применяются ко всему документу вместо одного абзаца.</li>
+              <li>Абзац «уезжает» в конец документа из-за разрывов.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Колонки — только на нужном абзаце</li>
+              <li>Разделитель включён, если требуется</li>
+              <li>Ширина колонок одинаковая</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 9. Формулы
+           ============================================================ -->
+      <section class="topic" id="formulas">
+        <h2 class="topic__title">Формулы</h2>
+        <p class="topic__lead">
+          Формулы в Word вставляются через встроенный редактор Microsoft Equation.
+          Внешне это похоже на конструктор: выбираешь шаблон дроби, степени,
+          корня — и заполняешь его.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Команды</div>
+            <ul>
+              <li><em>Вставка → Уравнение</em> (или <kbd>Alt</kbd>+<kbd>=</kbd>)</li>
+              <li>Или <em>Вставка → Объект → Microsoft Equation 3.0</em></li>
+              <li>Простые символы — <em>Вставка → Символ</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Набрали формулу «по буквам», без редактора — она кривая.</li>
+              <li>Использовали не тот регистр индексов (<em>x</em> vs <em>X</em>).</li>
+              <li>Формула как картинка — не редактируется.</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Формула вставлена через редактор</li>
+              <li>Все дроби, корни, индексы — как в задании</li>
+              <li>Формула открывается на редактирование двойным кликом</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           Тема 10. Макросы
+           ============================================================ -->
+      <section class="topic" id="macros">
+        <h2 class="topic__title">Макросы</h2>
+        <p class="topic__lead">
+          Макрос — записанная последовательность действий. Полезен, если
+          одну и ту же операцию надо повторять много раз.
+        </p>
+
+        <div class="topic__grid">
+          <div class="topic__block topic__block--cmd">
+            <div class="topic__block-title">🔧 Как записать</div>
+            <ul>
+              <li><em>Вид → Макросы → Запись макроса</em></li>
+              <li>Задать имя и (по желанию) сочетание клавиш</li>
+              <li>Выполнить действия, которые нужно записать</li>
+              <li><em>Вид → Макросы → Остановить запись</em></li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--key">
+            <div class="topic__block-title">⌨️ Полезно</div>
+            <ul>
+              <li><kbd>Alt</kbd>+<kbd>F8</kbd> — список макросов</li>
+              <li><kbd>Alt</kbd>+<kbd>F11</kbd> — редактор Visual Basic</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--warn">
+            <div class="topic__block-title">⚠️ Частые ошибки</div>
+            <ul>
+              <li>Макрос записан, но не сохранён в документе.</li>
+              <li>Клавиатурное сочетание пересекается с системным.</li>
+              <li>В макрос попали лишние действия (перемещение курсора).</li>
+            </ul>
+          </div>
+
+          <div class="topic__block topic__block--check">
+            <div class="topic__block-title">✅ Чек-лист</div>
+            <ul>
+              <li>Макрос записан, назначено сочетание клавиш</li>
+              <li>Работает в вашем файле</li>
+              <li>Файл сохранён как <code>.docm</code>, если макрос должен остаться</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+
+      <hr>
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-5);">
+        <a class="btn btn--primary" href="../practice/word.html">К заданиям Word →</a>
+        <a class="btn btn--ghost" href="excel.html">Дальше: теория Excel</a>
+        <a class="btn btn--ghost" href="index.html">← К оглавлению теории</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== TOC справа ===================== -->
+  <aside class="toc">
+    <div class="toc__title">На этой странице</div>
+    <ul class="toc__list">
+      <li><a href="#interface">Интерфейс и документ</a></li>
+      <li><a href="#font">Шрифт и абзац</a></li>
+      <li><a href="#styles">Стили и оглавление</a></li>
+      <li><a href="#page">Страница и колонтитулы</a></li>
+      <li><a href="#lists">Списки</a></li>
+      <li><a href="#tables">Таблицы</a></li>
+      <li><a href="#objects">Рисунки и объекты</a></li>
+      <li><a href="#columns">Колонки</a></li>
+      <li><a href="#formulas">Формулы</a></li>
+      <li><a href="#macros">Макросы</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

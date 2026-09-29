@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Теоретический справочник по учебной практике: Word, Excel и VBA. Темы, команды и типичные ошибки.">
+  <title>Теория — Учебная практика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="../assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="../assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="index.html" class="is-active">Введение</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="../practice/index.html">Введение</a>
+        <a href="../practice/word.html">Word</a>
+        <a href="../practice/excel.html">Excel</a>
+        <a href="../practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="../report/requirements.html">Отчёт</a>
+        <a href="../defense.html">Вопросы к защите</a>
+        <a href="../errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../index.html" class="breadcrumbs__item">Главная</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__item breadcrumbs__item--current">Теория</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Теория</h1>
+      <p class="lead">
+        Справочник по трём инструментам практики: Word, Excel и VBA.
+        Каждая тема — одна короткая карточка: зачем нужно, какие команды,
+        типичные ошибки и чек-лист. Читать всё подряд не нужно —
+        открывайте тему, которая нужна прямо сейчас.
+      </p>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">📖</div>
+        <div class="callout__body">
+          <div class="callout__title">Как читать теорию</div>
+          <p>
+            Внутри каждой части темы идут по порядку практических заданий.
+            Если вы выполняете задание W-03 — откройте Word, найдите тему
+            про таблицы. Остальное читать не обязательно.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===================== Word ===================== -->
+      <section class="theory-section">
+        <div class="theory-section__head">
+          <div class="theory-section__icon">📝</div>
+          <div>
+            <h2 class="theory-section__title">Word</h2>
+            <p class="theory-section__desc">
+              Текстовый процессор: форматирование, стили, таблицы, формулы, макросы.
+            </p>
+          </div>
+        </div>
+
+        <ul class="topics">
+          <li>
+            <a href="word.html#interface">
+              <span class="topics__title">Интерфейс и документ</span>
+              <span class="topics__meta">Вкладки, панели, режимы просмотра</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#font">
+              <span class="topics__title">Шрифт и абзац</span>
+              <span class="topics__meta">Гарнитура, размер, отступы, интервалы</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#styles">
+              <span class="topics__title">Стили и оглавление</span>
+              <span class="topics__meta">Стили заголовков, автособираемое содержание</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#page">
+              <span class="topics__title">Страница и колонтитулы</span>
+              <span class="topics__meta">Поля, ориентация, нумерация, верхний колонтитул</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#lists">
+              <span class="topics__title">Списки</span>
+              <span class="topics__meta">Маркированные, нумерованные, многоуровневые</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#tables">
+              <span class="topics__title">Таблицы</span>
+              <span class="topics__meta">Создание, объединение ячеек, формулы</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#objects">
+              <span class="topics__title">Рисунки и объекты</span>
+              <span class="topics__meta">Картинки, обтекание, буквица, WordArt</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#columns">
+              <span class="topics__title">Колонки</span>
+              <span class="topics__meta">Многоколоночная вёрстка, разделитель</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#formulas">
+              <span class="topics__title">Формулы</span>
+              <span class="topics__meta">Редактор Microsoft Equation</span>
+            </a>
+          </li>
+          <li>
+            <a href="word.html#macros">
+              <span class="topics__title">Макросы</span>
+              <span class="topics__meta">Запись макроса, назначение клавиш</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== Excel ===================== -->
+      <section class="theory-section">
+        <div class="theory-section__head">
+          <div class="theory-section__icon">📊</div>
+          <div>
+            <h2 class="theory-section__title">Excel</h2>
+            <p class="theory-section__desc">
+              Табличный процессор: формулы, ссылки, сводные таблицы, диаграммы, макросы.
+            </p>
+          </div>
+        </div>
+
+        <ul class="topics">
+          <li>
+            <a href="excel.html#interface">
+              <span class="topics__title">Интерфейс и лист</span>
+              <span class="topics__meta">Ячейка, диапазон, строка формул, листы</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#data">
+              <span class="topics__title">Типы данных</span>
+              <span class="topics__meta">Числа, текст, даты, логические значения</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#links">
+              <span class="topics__title">Ссылки</span>
+              <span class="topics__meta">Относительные, абсолютные, смешанные, F4</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#formulas">
+              <span class="topics__title">Формулы</span>
+              <span class="topics__meta">Операторы, ошибки, порядок вычислений</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#functions">
+              <span class="topics__title">Встроенные функции</span>
+              <span class="topics__meta">СУММ, ЕСЛИ, СРЗНАЧ, МАКС, МИН, Мастер функций</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#sort-filter">
+              <span class="topics__title">Сортировка и фильтры</span>
+              <span class="topics__meta">Автофильтр, сортировка по нескольким столбцам</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#pivot">
+              <span class="topics__title">Сводные таблицы</span>
+              <span class="topics__meta">Создание, поля, итоги</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#charts">
+              <span class="topics__title">Диаграммы</span>
+              <span class="topics__meta">Мастер диаграмм, типы, модификация</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#macros">
+              <span class="topics__title">Макросы</span>
+              <span class="topics__meta">Запись, кнопки, меню, панели</span>
+            </a>
+          </li>
+          <li>
+            <a href="excel.html#print">
+              <span class="topics__title">Печать и область печати</span>
+              <span class="topics__meta">Разметка, область печати, колонтитулы</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== VBA ===================== -->
+      <section class="theory-section">
+        <div class="theory-section__head">
+          <div class="theory-section__icon">⌨️</div>
+          <div>
+            <h2 class="theory-section__title">VBA</h2>
+            <p class="theory-section__desc">
+              Программирование в Excel: переменные, условия, циклы, процедуры и функции.
+            </p>
+          </div>
+        </div>
+
+        <ul class="topics">
+          <li>
+            <a href="vba.html#editor">
+              <span class="topics__title">Редактор VBA</span>
+              <span class="topics__meta">Модули, окно проекта, окно отладки</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#variables">
+              <span class="topics__title">Переменные и типы данных</span>
+              <span class="topics__meta">Dim, Byte, Integer, Long, Single, Double, String, Date</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#const">
+              <span class="topics__title">Константы</span>
+              <span class="topics__meta">Const, области видимости</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#operators">
+              <span class="topics__title">Операторы</span>
+              <span class="topics__meta">Арифметика, Mod, целочисленное деление</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#io">
+              <span class="topics__title">InputBox и MsgBox</span>
+              <span class="topics__meta">Ввод данных и вывод сообщений</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#conditions">
+              <span class="topics__title">Условия</span>
+              <span class="topics__meta">If…Then…Else, IIf, Select Case</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#loops">
+              <span class="topics__title">Циклы</span>
+              <span class="topics__meta">For…Next, вложенные циклы</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#procedures">
+              <span class="topics__title">Процедуры и функции</span>
+              <span class="topics__meta">Sub, Function, вызов, область видимости</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#std-math">
+              <span class="topics__title">Стандартные функции: математика</span>
+              <span class="topics__meta">Abs, Sgn, Fix, Int, Rnd</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#std-string">
+              <span class="topics__title">Стандартные функции: строки</span>
+              <span class="topics__meta">Left, Right, Mid, InStr, Replace, LCase</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#std-date">
+              <span class="topics__title">Стандартные функции: даты</span>
+              <span class="topics__meta">Day, Month, Year, DateDiff, DateAdd</span>
+            </a>
+          </li>
+          <li>
+            <a href="vba.html#std-convert">
+              <span class="topics__title">Преобразование типов и форматов</span>
+              <span class="topics__meta">CStr, CInt, Val, Format</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== Навигация внизу ===================== -->
+      <hr>
+
+      <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap;">
+        <a class="btn btn--primary" href="word.html">Начать с Word →</a>
+        <a class="btn btn--ghost" href="../practice/word.html">Сразу к заданиям Word</a>
+        <a class="btn btn--ghost" href="../how-to.html">Как проходить практику</a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="../assets/site.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

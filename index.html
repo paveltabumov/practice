@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Методические материалы по учебной практике ЧГУ ИИТ: Word, Excel, VBA. Варианты заданий и требования к отчету.">
+  <title>Учебная практика — методичка | Главная</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== Сайдбар ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-item sidebar__brand-item--small">
+        <img src="assets/img/logo-institute.jpg" alt="Институт информационных технологий">
+      </div>
+      <div class="sidebar__brand-divider" aria-hidden="true"></div>
+      <div class="sidebar__brand-item">
+        <img src="assets/img/logo-university.png" alt="Череповецкий государственный университет">
+      </div>
+    </div>
+
+    <div class="sidebar__title">Учебная практика</div>
+    <div class="sidebar__subtitle">ЧГУ · ИИТ · Кафедра МПО ЭВМ</div>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html" class="is-active">Главная</a>
+      <a href="how-to.html">Как проходить</a>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Теория</div>
+        <a href="theory/index.html">Введение</a>
+        <a href="theory/word.html">Word</a>
+        <a href="theory/excel.html">Excel</a>
+        <a href="theory/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Практика</div>
+        <a href="practice/index.html">Введение</a>
+        <a href="practice/word.html">Word</a>
+        <a href="practice/excel.html">Excel</a>
+        <a href="practice/vba.html">VBA</a>
+      </div>
+
+      <div class="nav__group">
+        <div class="nav__group-title">Материалы</div>
+        <a href="requirements.html">Отчёт</a>
+        <a href="defense.html">Вопросы к защите</a>
+        <a href="errors/index.html">Типичные ошибки</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ===================== Контент ===================== -->
+  <main class="content">
+
+    <div class="topbar">
+      <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню">☰</button>
+      
+      <nav class="topbar__breadcrumbs" aria-label="Хлебные крошки">
+        <span class="breadcrumbs__item breadcrumbs__item--current">Главная</span>
+      </nav>
+      
+      <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">◐</button>
+    </div>
+
+    <article class="page-content">
+      <h1>Учебная практика</h1>
+      <p class="lead">
+        Методические материалы по ознакомительной практике: текстовый процессор,
+        табличный процессор и основы программирования на VBA.
+        Все задания персонализированы — у каждого студента свой вариант.
+      </p>
+
+      <!-- Быстрые действия -->
+      <h2>С чего начать</h2>
+      <div class="card-grid">
+        <a class="card card--link" href="how-to.html">
+          <div class="card__icon">🧭</div>
+          <div class="card__title">Как проходить</div>
+          <div class="card__desc">Пошаговый порядок: от получения варианта до защиты.</div>
+        </a>
+
+        <a class="card card--link" href="practice/word.html">
+          <div class="card__icon">📝</div>
+          <div class="card__title">Задания</div>
+          <div class="card__desc">Word, Excel, VBA — практические задания.</div>
+        </a>
+
+        <a class="card card--link" href="report/trebovaniya.html">
+          <div class="card__icon">📄</div>
+          <div class="card__title">Отчёт</div>
+          <div class="card__desc">Требования, шаблон, пример оформления.</div>
+        </a>
+      </div>
+
+      <!-- Вариант (Упрощенный блок) -->
+      <h2>Мой вариант</h2>
+      <div class="card">
+        <p style="margin-top:0">
+          Все задания персонализированы. Выберите свой номер варианта 
+          и используйте его при выполнении практических заданий и оформлении отчёта.
+        </p>
+      </div>
+
+      <!-- Что сдать -->
+      <h2>Что нужно сдать</h2>
+      <div class="card">
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="chk-1" data-key="sdacha-word">
+            <label for="chk-1">
+              Файл Word: <code>Практика_Word_Фамилия_Группа_В&lt;вариант&gt;.docx</code>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk-2" data-key="sdacha-excel">
+            <label for="chk-2">
+              Файл Excel: <code>Практика_Excel_Фамилия_Группа_В&lt;вариант&gt;.xlsx</code>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk-3" data-key="sdacha-vba">
+            <label for="chk-3">
+              Файл VBA: <code>Практика_VBA_Фамилия_Группа_В&lt;вариант&gt;.xlsm</code>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk-4" data-key="sdacha-otchet">
+            <label for="chk-4">
+              Отчёт по практике (оформлен по требованиям).
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk-5" data-key="sdacha-zashchita">
+            <label for="chk-5">
+              Пройдена устная защита (3 вопроса).
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Что внутри -->
+      <h2>Что внутри</h2>
+      <div class="card-grid">
+        <a class="card card--link" href="theory/word.html">
+          <div class="card__icon">📘</div>
+          <div class="card__title">Теория: Word</div>
+          <div class="card__desc">Форматирование, стили, таблицы, формулы, макросы.</div>
+        </a>
+
+        <a class="card card--link" href="theory/excel.html">
+          <div class="card__icon">📗</div>
+          <div class="card__title">Теория: Excel</div>
+          <div class="card__desc">Формулы, ссылки, сводные таблицы, диаграммы, макросы.</div>
+        </a>
+
+        <a class="card card--link" href="theory/vba.html">
+          <div class="card__icon">📙</div>
+          <div class="card__title">Теория: VBA</div>
+          <div class="card__desc">Переменные, условия, циклы, процедуры, функции.</div>
+        </a>
+
+        <a class="card card--link" href="defense.html">
+          <div class="card__icon">🎯</div>
+          <div class="card__title">Защита</div>
+          <div class="card__desc">Список вопросов и случайный выбор трёх.</div>
+        </a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="assets/site.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
